@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Albums = () => {
+export default function Albums(){
   return (
     <div>
       
@@ -8,4 +8,3 @@ const Albums = () => {
   )
 }
 
-export default Albums

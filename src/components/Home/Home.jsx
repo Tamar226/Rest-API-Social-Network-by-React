@@ -1,8 +1,6 @@
 import React from 'react'
 import { NavLink, Route, Router, Routes } from 'react-router-dom'
-import {Todos} from "../Todos/Todos"
-import {Albums} from "../Albums/Albums"
-import {Posts} from "../Posts/Posts"
+
 function Home() {
   return (
     <>
@@ -12,13 +10,6 @@ function Home() {
     <NavLink to="/Albums">Albums</NavLink>
 
 </nav>
-      <Routes>
-
-        <Route path="/Posts" element={<Posts/>}/>
-        <Route path="/Todos" element={<Todos/>}/>
-        <Route path="/Albums" element={<Albums/>}/>
-
-      </Routes>
     </>
   )
 }

@@ -16,10 +16,6 @@ function LogIn() {
                     <button id="connect" onClick={() => handleLogin()}>Click to connect</button>
                 </div>
             </div>
-            <Routes location={"/LogIn"}>
-                <Route path="/Home" element={<Home />} />
-                <Route path="/Register" element={<Register />} />
-            </Routes>
         </div>
     )
 }
