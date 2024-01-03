@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Outlet, Route, Routes } from 'react-router-dom'
 import Home from "../Home/Home.jsx"
 import LogIn from './LogIn.jsx'
 import Register from "./Register.jsx"
@@ -12,6 +12,8 @@ function Welcome() {
                 <Route path="/Register" element={<Register/>}/>
                 <Route path="/Home" element={<Home/>}/>
             </Routes>
+    <Outlet/>
+
         </div>
     )
 }

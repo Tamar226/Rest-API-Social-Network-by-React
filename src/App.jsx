@@ -7,9 +7,10 @@ import Welcome from "./components/Welcome/Welcome.jsx"
 function App() {
   return (
     <>
-    <Routes>
+    <Routes >
      <Route path="/" element={<Welcome/>}/>
     </Routes>
+    
     </>
   )
 }
