@@ -1,9 +1,11 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 function Welcome() {
     return (
-        <div>
-            <h1>mnbvjk</h1>
-        </div>
+        <>
+        <h1>.NET</h1>
+        <h6><NavLink to={"/login"}>Login</NavLink></h6>
+        </>
     )
 }
 

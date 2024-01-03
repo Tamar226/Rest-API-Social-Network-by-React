@@ -8,9 +8,7 @@ function App() {
     <>
     <Routes >
      <Route index element={<Welcome/>}/>
-     <Route path={"/user"} element={<Home/>}/>
     </Routes>
-    
     </>
   )
 }

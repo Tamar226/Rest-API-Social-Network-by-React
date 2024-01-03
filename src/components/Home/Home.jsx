@@ -5,11 +5,14 @@ function Home() {
   return (
     <>
 <nav>
-    <NavLink to="/Posts">Posts</NavLink>
-    <NavLink to="/Todos">Todos</NavLink>
-    <NavLink to="/Albums">Albums</NavLink>
+    <NavLink to="/posts">Posts</NavLink>
+    <NavLink to="/todos">Todos</NavLink>
+    <NavLink to="/albums">Albums</NavLink>
 
 </nav>
+<Routes>
+  <Route path={"/posts"}/>
+</Routes>
     </>
   )
 }
