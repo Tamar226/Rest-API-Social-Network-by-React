@@ -8,9 +8,11 @@ import Todos from './components/Todos/Todos.jsx'
 import Posts from './components/Posts/Posts.jsx'
 import Albums from './components/Albums/Albums.jsx'
 import Register from './components/Welcome/Register.jsx'
+import NavBar from './components/General/NavBar.jsx'
 function App() {
   return (
     <>
+      <NavBar/>
       <Routes >
         <Route path="">
           <Route index element={<Welcome />} />
