@@ -1,9 +1,10 @@
 import React from 'react'
-
+import Post from "./Post"
+import './postsStyle.css'
 export default function Posts(){
   return (
-    <div>
-      
+    <div className='posts'>
+      <Post/>
     </div>
   )
 }

@@ -7,21 +7,38 @@
   height: 100%;
   position: absolute;
 }
-
+.title{
+  font-size: 5em;
+}
 nav {
   display: flex;
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
+  
   justify-content: space-around;
   align-items: center;
+  border-radius: 25px;
+  background-color: rgba(237, 241, 244, 0.498);
 }
 
 a {
-  margin: 30px;
-}
+  margin: 20px;
+  text-decoration: inherit;
+  color: rgb(48, 48, 140);
 
+}
+a:hover{
+  color: #888;
+}
+nav a{
+  font-size: 20px;
+}
+.enteringButtons{
+display: flex;
+justify-content: center;
+}
 .logo {
   height: 6em;
   padding: 1.5em;

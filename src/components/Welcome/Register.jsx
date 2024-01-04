@@ -24,7 +24,7 @@ function Register (){
             <label>Password:</label>
             <input type="password" placeholder="Write your password"value={password} onChange={(e) => setPassword(e.target.value)} /><br />
             <div className="connect">
-                <button id="connectButton" onClick={handleRegistration}>Connect</button>
+                <button onClick={handleRegistration}>Connect</button>
                 <button id="signupGuest" onClick={() => guestSignUp()}>SignUp as a guest</button>
 
             </div>

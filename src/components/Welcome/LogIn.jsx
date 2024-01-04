@@ -19,7 +19,7 @@ function LogIn() {
                 <input id="addPassword" type="password" placeholder="Write your password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
                 {/* {loginError && <p style={{ color: 'red' }}>{loginError}</p>} */}
                 <div className='connectLogIn'>
-                    <button id="connect" onClick={() => handleLogin()}>Click to connect</button>
+                    <button onClick={() => handleLogin()}>Click to connect</button>
                 </div>
             </div>
         </div>
