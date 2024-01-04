@@ -6,5 +6,5 @@ p{
     border: solid 3px rgb(80, 232, 82);
 }
 .posts{
-
+   display: grid;
 }
