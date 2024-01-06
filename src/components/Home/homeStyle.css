@@ -1,5 +1,32 @@
-nav a{
-    height: 30px;
-    width: 50px;
+.home{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 80%;
+}
 
+.option{
+    border-radius: 15px;
+    background-color: rgba(69, 66, 66, 0.414);
+    width: 24%;
+    height: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-weight: 800;
+    text-shadow: 2px 2px 5px #343232;
+    color: white;
+    font-size: 2em;
+}
+
+.todosHome{
+    background-image: url("../../assets/todos1.jpg");
+}
+
+.postsHome{
+    background-image: url("../../assets/posts.jpg");
+}
+
+.albumsHome{
+    background-image: url("../../assets/albums.jpg");
 }
