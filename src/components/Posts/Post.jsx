@@ -1,8 +1,11 @@
 import React from 'react'
-export default function Post(){
+export default function Post({id, title}){
   return (
-    <div>
-   <p>mkfjv;if;io vjnv;oi ;vo</p>
+    <div className='post'>
+      <h5>{id}</h5>
+      <h4>{title}</h4>
+      <input type='color'/>
+      <button>🗑️</button>
     </div>
   )
 }
