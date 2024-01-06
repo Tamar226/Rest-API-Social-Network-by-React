@@ -1,6 +1,6 @@
 .form{
     width: 340px;
-    height: 440px;
+    height: 500px;
     background: #efeded;
     border-radius: 8px;
     box-shadow: 0 0 20px -10px #000;
@@ -54,4 +54,15 @@ button {
 button:hover {
     background: #eeeef3;
     color: #565454
+}
+
+.connectLogIn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signupGuest{
+    display: block;
 }

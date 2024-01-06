@@ -4,7 +4,7 @@ import './postsStyle.css'
 export default function Posts(){
   return (
     <div className='posts'>
-      <Post/>
+      <Post id={5} title="yakkov tzvi is awosome!:)"/>
     </div>
   )
 }

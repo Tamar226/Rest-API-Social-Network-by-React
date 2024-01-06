@@ -1,10 +1,20 @@
-.posts p{
-    height: 40vh;
-    width: 40vh;
+.post {
+    height: fit-content;
+    width: fit-content;
     margin: 5vw;
-    border-radius: 4px;
-    border: solid 3px rgb(19, 30, 150);
+    padding: 1%;
+    border-radius: 15px;
+    border: solid 3px rgb(18, 26, 122);
+    background-color: rgba(207, 205, 205, 0.43);
 }
-.posts{
-   display: grid;
+
+.post input[type="color"] {
+    margin-top: 20%;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.419);
+}
+
+.posts {
+    display: grid;
 }

@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import './formsStyle.css';
+import { Link } from 'react-router-dom';
 
 function Register (){
     const [name, setName] = useState("");
@@ -23,10 +24,10 @@ function Register (){
 
             <label>Password:</label>
             <input type="password" placeholder="Write your password"value={password} onChange={(e) => setPassword(e.target.value)} /><br />
+                <a className="signupGuest" onClick={() => guestSignUp()}>SignUp as a guest</a>
             <div className="connect">
                 <button onClick={handleRegistration}>Connect</button>
-                <button id="signupGuest" onClick={() => guestSignUp()}>SignUp as a guest</button>
-
+                <Link to="/login">Log In</Link>
             </div>
         </div>
   )

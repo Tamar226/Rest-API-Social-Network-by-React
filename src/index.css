@@ -31,6 +31,7 @@ body {
   background-image: url("./assets/משושים.png");
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
 }
 
 h1 {
