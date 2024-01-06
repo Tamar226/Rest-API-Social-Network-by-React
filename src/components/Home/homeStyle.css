@@ -3,14 +3,14 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    height: 80%;
+    height: 70%;
 }
 
 .option{
     border-radius: 15px;
     background-color: rgba(69, 66, 66, 0.414);
     width: 24%;
-    height: 50%;
+    height: 60%;
     background-size: cover;
     background-repeat: no-repeat;
     font-weight: 800;
@@ -30,4 +30,13 @@
 
 .albumsHome{
     background-image: url("../../assets/albums.jpg");
+}
+
+.info{
+    padding: 0 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
 }
