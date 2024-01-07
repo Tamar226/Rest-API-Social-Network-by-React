@@ -236,13 +236,13 @@
       "userId": 1,
       "id": 1,
       "title": "delectus aut",
-      "completed": false
+      "completed": true
     },
     {
       "userId": 1,
       "id": 2,
       "title": "quis ut nam facilis et",
-      "completed": false
+      "completed": true
     },
     {
       "userId": 1,

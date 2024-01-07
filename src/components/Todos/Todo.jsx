@@ -20,9 +20,29 @@ export default function Todo({ todoId }) {
     };
     getTodo();
   }, [showUpdate]);
+
+  function handleChecked() {
+    setTodo(todo => ({ ...todo, completed: !todo.completed }));
+    const url = `http://localhost:3000/todos/${todoId}`;
+    const options = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ completed: !todo.completed })
+    }
+    fetch(url, options)
+      .then(response => response.json())
+      .then(json => {
+        console.log(json);
+      }).catch(error => {
+        console.log(error);
+      });
+  }
+
   return (
     <div className='todo'>
-      <input type="checkbox" checked={todo.completed}/>
+      <input type="checkbox" checked={todo.completed} onClick={handleChecked}/>
       <h6>{todo.id}</h6>
       <p>{todo.title}</p>
       {showUpdate && <TodoEdit todo={todo} setShowEdit={setShowUpdate}/>}
