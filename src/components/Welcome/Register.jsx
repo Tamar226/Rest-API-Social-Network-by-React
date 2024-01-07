@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './formsStyle.css';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+
 
 function Register() {
     const [userName, setUserName] = useState("");
