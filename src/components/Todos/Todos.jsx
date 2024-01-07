@@ -4,7 +4,8 @@ import Todo from './Todo'
 export default function Todos(){
   return (
     <div className='todoList'>
-      <Todo/>
+      <Todo todoId={1}/>
+      <Todo todoId={2}/>
     </div>
   )
 }

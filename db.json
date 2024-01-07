@@ -1,6 +1,5 @@
 {
-  "users":
-  [
+  "users": [
     {
       "id": 1,
       "name": "Leanne Graham",
@@ -232,18 +231,17 @@
       }
     }
   ],
-  "todos":
-  [
+  "todos": [
     {
       "userId": 1,
       "id": 1,
-      "title": "delectus aut autem",
+      "title": "delectus aut",
       "completed": false
     },
     {
       "userId": 1,
       "id": 2,
-      "title": "quis ut nam facilis et officia qui",
+      "title": "quis ut nam facilis et",
       "completed": false
     },
     {
@@ -1435,8 +1433,7 @@
       "completed": false
     }
   ],
-  "posts":
-  [
+  "posts": [
     {
       "userId": 1,
       "id": 1,
@@ -2038,8 +2035,7 @@
       "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
     }
   ],
-  "albums":
-  [
+  "albums": [
     {
       "userId": 1,
       "id": 1,
@@ -2541,8 +2537,7 @@
       "title": "enim repellat iste"
     }
   ],
-  "photos":
-  [
+  "photos": [
     {
       "albumId": 1,
       "id": 1,
@@ -37544,8 +37539,7 @@
       "thumbnailUrl": "https://via.placeholder.com/150/6dd9cb"
     }
   ],
-  "comments":
-  [
+  "comments": [
     {
       "postId": 1,
       "id": 1,
