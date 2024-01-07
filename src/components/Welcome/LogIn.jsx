@@ -39,6 +39,7 @@ function LogIn() {
                 {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
                 <div className='connectLogIn'>
                     <button onClick={() => handleLogin()}>Click to connect</button>
+                    {/* <Link to="/register">Register</Link> */}
                 </div>
             </div>
         </div>
