@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Home from "../Home/Home"
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route,Link } from 'react-router-dom'
+
 import './formsStyle.css';
 function LogIn() {
     const [userName, setUserName] = useState("");
@@ -38,7 +39,7 @@ function LogIn() {
                 {loginMessage && <p style={{ color: 'red' }}>{loginMessage}</p>}
                 <div className='connectLogIn'>
                     <button onClick={() => handleLogin()}>Click to connect</button>
-                    {/* <Link to="/register">Register</Link> */}
+                    <Link to="/register">Register</Link>
                 </div>
             </div>
         </div>

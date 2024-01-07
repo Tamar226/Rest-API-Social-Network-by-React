@@ -93,7 +93,7 @@ function Register() {
             <input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
             <input type="passwordVerify" placeholder="verify password" value={verifyPassword} onChange={(e) => setVerifyPassword(e.target.value)} /><br />
             <div className="connect">
-                <button onClick={handleRegistration}>Connect</button>
+                <button onClick={()=>handleRegistration()}>Connect</button>
                 <Link to="/login">Log In</Link>
             </div>
         </div>
