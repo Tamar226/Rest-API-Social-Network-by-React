@@ -1,10 +1,10 @@
 import React from 'react'
-import Post from "./Post"
 import './postsStyle.css'
+import PostTitle from './PostTitle'
 export default function Posts(){
   return (
     <div className='posts'>
-      <Post id={5} title="yakkov tzvi is awosome!:)"/>
+      <PostTitle postId={5} title="yakkov tzvi is awosome!:)"/>
     </div>
   )
 }

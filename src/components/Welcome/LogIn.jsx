@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Home from "../Home/Home"
 import { Routes, Route } from 'react-router-dom'
 import './formsStyle.css';
-import { Axios } from 'axios';
 function LogIn() {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
