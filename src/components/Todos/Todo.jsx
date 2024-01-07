@@ -22,7 +22,7 @@ export default function Todo({ todoId }) {
   }, [showUpdate]);
   return (
     <div className='todo'>
-      <input type="checkbox" />
+      <input type="checkbox" checked={todo.completed}/>
       <h6>{todo.id}</h6>
       <p>{todo.title}</p>
       {showUpdate && <TodoEdit todo={todo} setShowEdit={setShowUpdate}/>}
