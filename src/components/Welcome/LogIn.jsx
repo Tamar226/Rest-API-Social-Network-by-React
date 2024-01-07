@@ -8,7 +8,7 @@ function LogIn() {
     const [password, setPassword] = useState("");
     const [loginError, setLoginError] = useState('');
 
-    async function getUserData() {
+    async function handleLogin() {
         if (!userName || !password) {
             setLoginError('Please fill in all fields.');
             return;
@@ -39,7 +39,7 @@ function LogIn() {
                 <input id="addPassword" type="password" placeholder="Write your password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
                 {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
                 <div className='connectLogIn'>
-                    <button onClick={() => getUserData()}>Click to connect</button>
+                    <button onClick={() => handleLogin()}>Click to connect</button>
                 </div>
             </div>
         </div>
