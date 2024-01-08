@@ -43,6 +43,7 @@ function Register() {
         }
         else {
             setSignUpMessage("Please fill all your details:");
+            // <Link to="/registration">Filling in details</Link>
             postData();
         }
         async function postData() {
