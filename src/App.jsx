@@ -36,12 +36,14 @@ function App() {
   }));
   return (
     <>
+    <header>
       <NavBar/>
+      </header>
       <Routes >
         <Route path="">
           <Route index element={<Welcome />} />
           <Route path="login" element={<LogIn />} />
-          <Route path="signup" element={<Register />} />
+          <Route path="register" element={<Register />} />
         </Route>
         <Route path="/:id">
           <Route index element={<Home />} />

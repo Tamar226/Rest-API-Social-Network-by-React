@@ -1,19 +1,19 @@
 import React from 'react'
-import { NavLink, useParams,Link } from 'react-router-dom'
+import { NavLink, useParams, Link } from 'react-router-dom'
 import './homeStyle.css'
+import ExitPage from './ExitPage';
 
 function Home() {
   const { id } = useParams();
-  const name = JSON.parse(localStorage.getItem('currentUser')).name;
-  function logout(){
+  const name =JSON.parse(localStorage.getItem('currentUser')).name;
+  function logout() {
     localStorage.removeItem('currentUser');
-    <Link to="/welcome"></Link>
-}
+  }
   return (
     <>
       <div className='info'>
         <h1>{name}</h1>
-        <button className='logout' onClick={()=>logout()}>Logout</button>
+        <Link className='logout' to={"/exitPage"} onClick={logout}>Logout</Link>
       </div>
       <div className='home'>
         <NavLink className={"option todosHome"} to={`/${id}/todos`}>

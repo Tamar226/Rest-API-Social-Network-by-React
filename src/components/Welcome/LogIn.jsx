@@ -39,7 +39,7 @@ function LogIn() {
                 {loginMessage && <p style={{ color: 'red' }}>{loginMessage}</p>}
                 <div className='connectLogIn'>
                     <button onClick={() => handleLogin()}>Click to connect</button>
-                    <Link to="/register">Register</Link>
+                    <Link style={{ color: 'orange' ,fontWeight:'bold'}} to="/register">Register</Link>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState,useParams} from 'react'
 import AlbumTitle from './AlbumTitle';
 
 export default function Albums(){
