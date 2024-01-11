@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './todosStyle.css'
 import TodoEdit from './TodoEdit';
 
-export default function Todo({ todoId }) {
+export default function Todo({ todoId, setTodos }) {
   const [todo, setTodo] = useState({});
   const [showUpdate, setShowUpdate] = useState(false);
 
@@ -39,6 +39,24 @@ export default function Todo({ todoId }) {
       });
   }
 
+  function handleDelete(){
+    const url = `http://localhost:3000/todos/${todoId}`;
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    }
+    fetch(url, options)
+      .then(response => response.json())
+      .then(json => {
+        console.log(json);
+      }).catch(error => {
+        console.log(error);
+      });
+      setTodos(todos => todos.filter(todo => todo.id !== todoId));
+  }
+
   return (
     <div className='todo'>
       <input type="checkbox" checked={todo.completed} onClick={handleChecked}/>
@@ -46,7 +64,7 @@ export default function Todo({ todoId }) {
       <p>{todo.title}</p>
       {showUpdate && <TodoEdit todo={todo} setShowEdit={setShowUpdate}/>}
       <button onClick={()=>setShowUpdate(true)}>✒️</button>
-      <button>🗑️</button>
+      <button onClick={handleDelete}>🗑️</button>
     </div>
   )
 }
