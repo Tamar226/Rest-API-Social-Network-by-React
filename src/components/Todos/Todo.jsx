@@ -9,7 +9,6 @@ export default function Todo({ todoId }) {
   useEffect(() => {
     function getTodo() {
       const url = `http://localhost:3000/todos/${todoId}`;
-      console.log(url);
       fetch(url)
         .then(response => response.json())
         .then(json => {

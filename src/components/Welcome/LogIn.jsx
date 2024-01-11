@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Home from "../Home/Home"
-import { Routes, Route,Link } from 'react-router-dom'
+import { Routes, Route,Link, Navigate } from 'react-router-dom'
 
 import './formsStyle.css';
 function LogIn() {
@@ -14,10 +14,14 @@ function LogIn() {
             return;
         }
         const response = await fetch(`http://localhost:3000/users/?username=${userName}`);
+        if(!response.ok){
+            alert("error");
+            return;
+        }
         const data = await response.json()
         if (data[0].website == password) {
             localStorage.setItem("currentUser", JSON.stringify(data[0]));
-            navigate(`/users/${data[0].id}/home`)
+            Navigate(`/users/${data[0].id}`);
         }
         else {
             setLoginMessage('Invalid username or password.');

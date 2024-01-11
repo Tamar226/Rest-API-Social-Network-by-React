@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './formsStyle.css';
 import { Link } from 'react-router-dom';
-import CompletionRegistration from './CompletionRegistration';
+import CompleteRegistration from './CompleteRegistration';
 
 
 function Register() {
@@ -60,7 +60,7 @@ function Register() {
         value={verifyPassword}
         onChange={(e) => setVerifyPassword(e.target.value)} /><br />
 
-      {continueSingUp && <CompletionRegistration password={password} verifyPassword={verifyPassword} userName={userName} />}
+      {continueSingUp && <CompleteRegistration password={password} verifyPassword={verifyPassword} userName={userName} />}
 
       <div className="connect">
         <button onClick={() => handleRegistration()}>Connect</button><br />

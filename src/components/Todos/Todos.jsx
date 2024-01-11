@@ -6,6 +6,7 @@ export default function Todos(){
     <div className='todoList'>
       <Todo todoId={1}/>
       <Todo todoId={2}/>
+     
     </div>
   )
 }

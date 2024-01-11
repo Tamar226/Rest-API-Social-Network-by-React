@@ -1,12 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function ExitPage () {
+function ExitPage() {
   return (
     <div>
-      <h1>Thank you for your using.🤗
-        we will happy to see you again😊!
-      </h1>
-      <button>Enter again↩</button>
+      <h2>Thank you for being with us.🤗<br/>
+        see you again😊!
+      </h2>
+      <Link to="/">Enter again↩</Link>
     </div>
   )
 }

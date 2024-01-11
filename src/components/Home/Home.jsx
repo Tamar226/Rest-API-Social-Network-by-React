@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink, useParams, Link } from 'react-router-dom'
+import { NavLink, useParams, Link, Navigate } from 'react-router-dom'
 import './homeStyle.css'
 import ExitPage from './ExitPage';
 
@@ -13,7 +13,7 @@ function Home() {
     <>
       <div className='info'>
         <h1>{name}</h1>
-        <Link className='logout' to={"/exitPage"} onClick={logout}>Logout</Link>
+        <Link className='logout' to={`/${id}/exit`} onClick={logout}>Logout</Link>
       </div>
       <div className='home'>
         <NavLink className={"option todosHome"} to={`/${id}/todos`}>

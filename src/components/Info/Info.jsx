@@ -1,11 +1,10 @@
 import React from 'react'
 
 function Info() {
-    const { id } = useParams();
-    const currentuser = JSON.parse(localStorage.getItem('currentUser')).name;
+    const currentuser = JSON.parse(localStorage.getItem('currentUser'));
     return (
         <div>
-            <h1>Hello, {currentuser.username}.</h1>
+            <h1>Hello, {currentuser.name}.</h1>
             <h3>What do we know about you? 🕵️</h3>
             <div>
                 <p>id: {currentuser.id}</p>

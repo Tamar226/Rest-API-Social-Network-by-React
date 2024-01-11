@@ -1,10 +1,10 @@
 import React from 'react'
 
-function AlbumTitle () {
+function AlbumTitle ({album}) {
   return (
     <div>
-        <h1>{AlbumTitle.id}</h1>
-        <h2>{AlbumTitle.title}</h2>
+        <h1>{album.id}</h1>
+        <h2>{album.title}</h2>
     </div>
   )
 }

@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 
-function CompletionRegistration() {
+function CompleteRegistration() {
     const [newUser, setNewUser] = useState({
-        "id": 1,
         "name": "",
         "username": "",
         "email": "",
@@ -24,22 +23,9 @@ function CompletionRegistration() {
             "bs": ""
         }
     });
-    //     const [email, setEmail] = useState("");
-    //   const [phone, setPhone] = useState(0);
-    //   const [fullName, setFullName] = useState("");
-    //   const [street, setStreet] = useState("");
-    //   const [suite, setSuite] = useState("");
-    //   const [city, setCity] = useState("");
-    //   const [zipcode, setZipcode] = useState("");
-    //   const [lat, setLat] = useState(0);
-    //   const [lng, setLng] = useState("");
-    //   const [companyName, setCompanyName] = useState("");
-    //   const [catchPhrase, setCatchParse] = useState("");
-    //   const [Bs, setBs] = useState("");
 
     async function handleComplate({userName,password,verifyPassword}) {
-        setnewUser({
-            "id": newUser.id,
+        setNewUser({
             "name": newUser.name,
             "username":userName,
             "email": newUser.email,
@@ -49,8 +35,8 @@ function CompletionRegistration() {
                 "city": newUser.address.city,
                 "zipcode": newUser.address.zipcode,
                 "geo": {
-                    "lat": newUser.geo.lat,
-                    "lng": newUser.geo.lng
+                    "lat": newUser.address.geo.lat,
+                    "lng": newUser.address.geo.lng
                 }
             },
             "phone": newUser.phone,
@@ -65,7 +51,7 @@ function CompletionRegistration() {
             method: 'POST',
             body: JSON.stringify(newUser),
             headers: {
-                Accept: 'application/json',
+                'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
         })
@@ -75,7 +61,6 @@ function CompletionRegistration() {
         //save the data of the new user
         window.history.replaceState(null, '', '/');
     }
-
     return (
         <>
         <div className='form'>
@@ -83,74 +68,74 @@ function CompletionRegistration() {
             <input
                 type="email"
                 placeholder="email"
-                value={email}
-                onChange={(e) => setEmail( newUser.email(e.target.value))}
+                value={newUser.email}
+                onChange={(e) => setNewUser(u=>{return {...u, email:e.target.value}})}
             />
             <input
                 type="text"
                 placeholder="phone"
-                value={phone}
-                onChange={(e) => setPhone(newUser.phone(e.target.value))}
+                value={newUser.phone}
+                onChange={(e) => setNewUser(u=>{return {...u, phone:e.target.value}})}
             />
             <input
                 type="text"
                 placeholder="fullName"
-                value={fullName}
-                onChange={(e) => setFullName(newUser.name(e.target.value))}
+                value={newUser.name}
+                onChange={(e) => setNewUser(u=>{return {...u, name:e.target.value}})}
             />
             <input
                 type="text"
                 placeholder="street"
-                value={street}
-                onChange={(e) => setStreet( newUser.address.street(e.target.value))}
+                value={newUser.address.street}
+                onChange={(e) => setNewUser(u=>{return {...u, address:{...u.address, street: e.target.value}}})}
             />
             <input
                 type="text"
                 placeholder="suite"
-                value={suite}
-                onChange={(e) => setSuite( newUser.address.suite(e.target.value))}
+                value={newUser.address.suite}
+                onChange={(e) => setNewUser(u=>{return {...u, address:{...u.address, suite: e.target.value}}})}
             />
             <input
                 type="text"
                 placeholder="city"
-                value={city}
-                onChange={(e) => setCity( newUser.address.city(e.target.value))}
+                value={newUser.address.city}
+                onChange={(e) => setNewUser(u=>{return {...u, address:{...u.address, city: e.target.value}}})}
             />
             <input
                 type="text"
                 placeholder="zipcode"
-                value={zipcode}
-                onChange={(e) => setZipcode(newUser.address.zipcode(e.target.value))}
+                value={newUser.address.zipcode}
+                onChange={(e) => setNewUser(u=>{return {...u, address:{...u.address, zipcode: e.target.value}}})}
             />
             <input
                 type="text"
                 placeholder="geo - lat"
-                value={lat}
-                onChange={(e) => setLat(newUser.geo.lat(e.target.value))}
+                value={newUser.address.geo.lat}
+                onChange={(e) => setNewUser(u=>{return {...u, address: {...u.address, geo:{...u.address.geo, lat: e.target.value}}}})}
             />
             <input
                 type="text"
                 placeholder="geo - lng"
-                value={lng}
-                onChange={(e) => setLng(newUser.geo.lng(e.target.value))}
+                value={newUser.address.geo.lng}
+                onChange={(e) => setNewUser(u=>{return {...u, address: {...u.address, geo:{...u.address.geo, lng: e.target.value}}}})}
             />
             <input
                 type="text"
                 placeholder="companyName"
-                value={companyName}
-                onChange={(e) => setCompanyName( newUser.company.name(e.target.value))}
+                value={newUser.company.name}
+                onChange={(e) => setNewUser(u=>{return {...u, company: {...u.company, name:e.target.value}}})}
             />
             <input
                 type="text"
                 placeholder="catchPhrase"
-                value={catchPhrase}
-                onChange={(e) => setCatchPhrase(newUser.company.catchPhrase(e.target.value))}
+                value={newUser.company.catchPhrase}
+                onChange={(e) => setNewUser(u=>{return {...u, company: {...u.company, catchPhrase:e.target.value}}})}
             />
             <input
                 type="text"
                 placeholder="bs"
-                value={bs}
-                onChange={(e) => setNewUser( newUser.company.bs(e.target.value))}
+                value={newUser.bs}
+                onChange={(e) => setNewUser(u=>{return {...u, company: {...u.company, bs:e.target.value}}})}
             />
             <button onClick={handleComplate}>Complete Sign Up</button>
         </div>
@@ -158,4 +143,4 @@ function CompletionRegistration() {
     )
 }
 
-export default CompletionRegistration
+export default CompleteRegistration

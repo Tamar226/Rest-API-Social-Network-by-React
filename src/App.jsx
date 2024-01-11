@@ -10,6 +10,8 @@ import Albums from './components/Albums/Albums.jsx'
 import Register from './components/Welcome/Register.jsx'
 import NavBar from './components/General/NavBar.jsx'
 import PostMain from './components/Posts/PostMain.jsx'
+import ExitPage from './components/Home/ExitPage.jsx'
+import Info from './components/Info/Info.jsx'
 function App() {
   localStorage.setItem("currentUser", JSON.stringify({
     "id": 1,
@@ -47,6 +49,8 @@ function App() {
         </Route>
         <Route path="/:id">
           <Route index element={<Home />} />
+          <Route path="info" element={<Info />} />
+          <Route path="exit" element={<ExitPage />} />
           <Route path="todos" element={<Todos />} />
           <Route path="albums" element={<Albums />} />
           <Route path="posts" element={<Posts />} >
