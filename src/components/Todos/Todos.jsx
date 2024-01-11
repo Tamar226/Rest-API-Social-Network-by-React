@@ -29,7 +29,7 @@ export default function Todos(){
 
   return (
     <div className='todoList'>
-      <button className='addTodoButton'>+</button>
+      <button className='addTodoButton' onClick={()=>setShowAdd(true)}>+</button>
       <input type="search" className='searchTodo' placeholder='search...'
       onChange={e=> setSearch(e.target.value)} value={search} onSubmit={handleSearch}/>
       <button type="submit" className='searchButton' onClick={handleSearch}>🔍</button>
