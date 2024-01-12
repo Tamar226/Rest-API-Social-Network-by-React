@@ -1,34 +1,38 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { useParams } from 'react-router-dom';
 
-function AddTodo() {
-  
-    function handleSubmit(e){
+function AddTodo({setShowAdd, setTodos}) {
+    const [title, setTitle] = useState('');
+    const {id} = useParams();
+
+    function handleSubmit(e) {
         e.preventDefault();
         const url = `http://localhost:3000/todos`;
         const options = {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ title: e.target.title.value, completed: false, userId: 1 })
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ title: title, completed: false, userId: id })
         }
         fetch(url, options)
-          .then(response => response.json())
-          .then(json => {
-            console.log(json);
-          }).catch(error => {
-            console.log(error);
-          });
+            .then(response => response.json())
+            .then(json => {
+                setTodos(todos=>todos.concat(json));
+            }).catch(error => {
+                console.log(error);
+            });
+            setShowAdd(false);
     }
 
-  return (
-    <div>
-        <form onSubmit={handleSubmit}>
-            <input type="text" name="title" placeholder="title..."/>
-            <button className="btn">submit</button>
-        </form>
-    </div>
-  )
+    return (
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input type="text" name="title" value={title} onChange={e=>setTitle(e.target.value)} placeholder="title..." />
+                <button className="btn">submit</button>
+            </form>
+        </div>
+    )
 }
 
 export default AddTodo

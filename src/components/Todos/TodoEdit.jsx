@@ -28,7 +28,6 @@ function TodoEdit({ setShowEdit, todo }) {
             <div className='todoEdit'>
                 <h2>{todo.id}</h2>
                 <input type="text" value={title} onChange={e => setTitle(e.target.value)} />
-                <input type='color' />
                 <button onClick={handleUpdate}>update</button>
             </div>
         </div>
