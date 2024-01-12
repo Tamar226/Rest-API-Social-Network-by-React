@@ -20,7 +20,7 @@ export default function Albums() {
     <div className='albums'>
       <h1>Albums</h1>
       {albums.map(album => {
-        <AlbumTitle album={album} />
+        <AlbumTitle album={album} key={album.id}/>
       })}
     </div>
   )
