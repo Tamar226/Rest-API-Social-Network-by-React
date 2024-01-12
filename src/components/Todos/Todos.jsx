@@ -8,17 +8,18 @@ export default function Todos(){
   const [showAdd, setShowAdd] = useState(false);
   const [search, setSearch] = useState('');
   const [selection, setSelection] = useState('serial');
+  const [currentPage, setCurrentPage] = useState(1);
   
   const {id} = useParams();
   useEffect(() => {
-    fetch(`http://localhost:3000/todos?_page=2&_limit=5&userId=${id}`)
+    fetch(`http://localhost:3000/todos?_page=${currentPage}&_limit=5&userId=${id}`)
       .then(response => response.json())
       .then(json => {
         setTodos(json);
       }).catch(error => {
         console.log(error);
       });
-  }, []);
+  }, [currentPage]);
 
   function handleSearch(){
     fetch(`http://localhost:3000/todos/?userId=${id}&q=${search}`)
@@ -60,7 +61,7 @@ export default function Todos(){
         <option value="completed">completed</option>
       </select>
       {todos.map(todo => <Todo key={todo.id} todoId={todo.id} setTodos={setTodos} />)}
-      <button>Show More</button>
+      <button onClick={()=>setCurrentPage(p=>p+1)}>⬅️</button><button onClick={()=>setCurrentPage(p=>p==1? 1:p-1)}>➡️</button>
     </div>
   )
 }
