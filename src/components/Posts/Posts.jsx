@@ -17,7 +17,7 @@ export default function Posts() {
   return (
     <div className='posts'>
       {posts.map(p =>
-        <PostTitle postId={p.id} title={p.title} />
+        <PostTitle postId={p.id} title={p.title} key={p.id}/>
       )}
     </div>
   )
