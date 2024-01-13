@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 function NavBar() {
     const [userIn, setUserIn] = useState(false);
+    const location = useLocation();
     let id;
     useEffect(() => { 
         let json = localStorage.getItem('currentUser');
@@ -14,7 +15,7 @@ function NavBar() {
         else{
             setUserIn(false);
         }
-    }, [window.location.href]);
+    }, [location.pathname]);
     return (
         <nav>
             <h1>.NET</h1>
