@@ -1,17 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 
-function AddComment({ setShowAddComment }) {
+function AddComment({ setShowAddComment, setComments }) {
     const [body, setBody] = useState('');
     const { postId, id } = useParams();
-    const [user, setUser] = useState({});
-
-    useEffect(() => {
-        fetch(`http://localhost:3000/users/${id}`)
-            .then(response => response.json())
-            .then(json => {
-                setUser(json);
-            })
-    }, []);
+    const user = JSON.parse(localStorage.getItem('currentUser'));
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -26,10 +19,11 @@ function AddComment({ setShowAddComment }) {
         fetch(url, options)
             .then(response => response.json())
             .then(json => {
-                setBody(body => body.concat(json));
+                setComments(comments=>comments.concat({body:body, email: user.email, name: user.name, id: json.id}));
             }).catch(error => {
                 console.log(error);
             });
+        
         setShowAddComment(false);
     }
 
