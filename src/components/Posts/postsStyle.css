@@ -18,3 +18,23 @@
 .posts {
     display: grid;
 }
+
+
+.wrapper{
+    top: 5vh;
+    left: 5vh;
+    width: 90vw;
+    height: 90vh;
+    background-color: rgba(156, 138, 236, 0.314);
+    position:absolute;
+}
+
+.postEdit{
+    width: 70%;
+    height: 70%;
+    margin: 10vh auto;
+    background-color: white;
+    padding: 20%;
+    box-sizing: border-box;
+    border-radius: 15px;
+}

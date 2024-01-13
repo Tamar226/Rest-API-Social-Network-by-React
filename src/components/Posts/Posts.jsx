@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './postsStyle.css'
 import PostTitle from './PostTitle'
 import AddPost from './AddPost'
-// import PostMain from './PostMain'
 import { useParams } from 'react-router-dom'
-import PostMain from './PostMain'
 
 export default function Posts() {
   const { id } = useParams();
