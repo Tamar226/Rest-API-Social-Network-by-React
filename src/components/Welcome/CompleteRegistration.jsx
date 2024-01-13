@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function CompleteRegistration() {
+function CompleteRegistration({userName, password}) {
     const navigate = useNavigate();
     const [newUser, setNewUser] = useState({
         "name": "",
-        "username": "",
+        "username": userName,
         "email": "",
         "address": {
             "street": "",
@@ -18,7 +18,7 @@ function CompleteRegistration() {
             }
         },
         "phone": "",
-        "website": "",
+        "website": password,
         "company": {
             "name": "",
             "catchPhrase": "",
@@ -26,7 +26,7 @@ function CompleteRegistration() {
         }
     });
 
-    function handleComplate({userName,password}) {
+    function handleComplate() {
         fetch(`http://localhost:3000/users`, {
             method: 'POST',
             headers: {
@@ -34,7 +34,7 @@ function CompleteRegistration() {
             },
             body: JSON.stringify({
                 "name": newUser.name,
-                "username":userName,
+                "username":newUser.username,
                 "email": newUser.email,
                 "address": {
                     "street": newUser.address.street,
@@ -47,7 +47,7 @@ function CompleteRegistration() {
                     }
                 },
                 "phone": newUser.phone,
-                "website": password,
+                "website": newUser.website,
                 "company": {
                     "name": newUser.company.name,
                     "catchPhrase": newUser.company.catchPhrase,
@@ -65,6 +65,12 @@ function CompleteRegistration() {
         <>
         <div className='form'>
             <h2>Fill in all your details to register:</h2>
+            <input
+                type="text"
+                placeholder="name"
+                value={newUser.name}
+                onChange={(e) => setNewUser(u=>{return {...u, name:e.target.value}})}
+            />
             <input
                 type="email"
                 placeholder="email"

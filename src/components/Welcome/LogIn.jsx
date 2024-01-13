@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import Home from "../Home/Home"
-import { Routes, Route,Link, Navigate } from 'react-router-dom'
-
+import { Routes, Route,Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import './formsStyle.css';
+
 function LogIn() {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [loginMessage, setLoginMessage] = useState('');
+    const navigate = useNavigate();
 
     async function handleLogin() {
         if (!userName || !password) {
@@ -14,14 +16,14 @@ function LogIn() {
             return;
         }
         const response = await fetch(`http://localhost:3000/users/?username=${userName}`);
-        if(!response.ok){
+        if(!response.ok && response.status != 404){
             alert("error");
             return;
         }
-        const data = await response.json()
+        const data = await response.json();
         if (data[0].website == password) {
             localStorage.setItem("currentUser", JSON.stringify(data[0]));
-            Navigate(`/users/${data[0].id}`);
+            navigate(`/${data[0].id}`);
         }
         else {
             setLoginMessage('Invalid username or password.');

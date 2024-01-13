@@ -60,7 +60,7 @@ function Register() {
         value={verifyPassword}
         onChange={(e) => setVerifyPassword(e.target.value)} /><br />
 
-      {continueSingUp && <CompleteRegistration password={password} verifyPassword={verifyPassword} userName={userName} />}
+      {continueSingUp && <CompleteRegistration password={password} userName={userName} />}
 
       <div className="connect">
         <button onClick={() => handleRegistration()}>Connect</button><br />
