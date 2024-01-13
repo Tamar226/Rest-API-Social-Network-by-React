@@ -17,7 +17,7 @@ function NavBar() {
     return (
         <nav>
             <h1>.NET</h1>
-            {userIn && <><h4 ><NavLink to={`/${userIn}/todos`}>Todos</NavLink></h4>
+            {userIn==0 && <><h4 ><NavLink to={`/${userIn}/todos`}>Todos</NavLink></h4>
             <h4 ><NavLink to={`/${userIn}/albums`}>Albums</NavLink></h4>
             <h4 ><NavLink to={`/${userIn}/posts`}>Posts</NavLink></h4>
             <h4 ><NavLink to={`/${userIn}`}>Home</NavLink></h4>
