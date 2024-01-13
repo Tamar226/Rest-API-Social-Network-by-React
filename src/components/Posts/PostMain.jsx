@@ -12,7 +12,7 @@ function PostMain() {
         .then(json => {
             setPost(json);
         })
-    }, []);
+    }, [showEdit]);
     
     function handleDelete(){
         fetch(`http://localhost:3000/posts/${postId}`, {
@@ -22,7 +22,7 @@ function PostMain() {
         .then(json => {
             console.log(json);
         })
-    }
+    };
 
     return (
         <div>
