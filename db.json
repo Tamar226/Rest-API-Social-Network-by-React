@@ -229,6 +229,27 @@
         "catchPhrase": "Centralized empowering task-force",
         "bs": "target end-to-end models"
       }
+    },
+    {
+      "name": "יוכבד ליביקי",
+      "email": "yokheved.spr@gmail.com",
+      "address": {
+        "street": "בית וגן ",
+        "suite": "26",
+        "city": "ירושלים",
+        "zipcode": "9642701",
+        "geo": {
+          "lat": "1",
+          "lng": "1"
+        }
+      },
+      "phone": "6520221",
+      "company": {
+        "name": "1",
+        "catchPhrase": "1",
+        "bs": "1"
+      },
+      "id": 11
     }
   ],
   "todos": [

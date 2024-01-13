@@ -15,9 +15,7 @@ export default function Albums() {
         .catch(e => console.log(e))
     }
     loadPhotos();
-  console.log(albums);
 }, []);
-  console.log(albums);
   return (
     <div className='albums'>
       <h1>Albums</h1>

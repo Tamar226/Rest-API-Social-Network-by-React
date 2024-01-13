@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function CompleteRegistration() {
+    const navigate = useNavigate();
     const [newUser, setNewUser] = useState({
         "name": "",
         "username": "",
@@ -24,42 +26,40 @@ function CompleteRegistration() {
         }
     });
 
-    async function handleComplate({userName,password,verifyPassword}) {
-        setNewUser({
-            "name": newUser.name,
-            "username":userName,
-            "email": newUser.email,
-            "address": {
-                "street": newUser.address.street,
-                "suite": newUser.address.suite,
-                "city": newUser.address.city,
-                "zipcode": newUser.address.zipcode,
-                "geo": {
-                    "lat": newUser.address.geo.lat,
-                    "lng": newUser.address.geo.lng
-                }
-            },
-            "phone": newUser.phone,
-            "website": password,
-            "company": {
-                "name": newUser.company.name,
-                "catchPhrase": newUser.company.catchPhrase,
-                "bs": newUser.company.bs
-            }
-        });
-        const response = await fetch(`https://localhost:3000/users`, {
+    function handleComplate({userName,password}) {
+        fetch(`http://localhost:3000/users`, {
             method: 'POST',
-            body: JSON.stringify(newUser),
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             },
+            body: JSON.stringify({
+                "name": newUser.name,
+                "username":userName,
+                "email": newUser.email,
+                "address": {
+                    "street": newUser.address.street,
+                    "suite": newUser.address.suite,
+                    "city": newUser.address.city,
+                    "zipcode": newUser.address.zipcode,
+                    "geo": {
+                        "lat": newUser.address.geo.lat,
+                        "lng": newUser.address.geo.lng
+                    }
+                },
+                "phone": newUser.phone,
+                "website": password,
+                "company": {
+                    "name": newUser.company.name,
+                    "catchPhrase": newUser.company.catchPhrase,
+                    "bs": newUser.company.bs
+                }
+            })
         })
-            .catch(error => { console.log("Error:", error); })
-        const data = await response.json();
-        localStorage.setItem('currentUser', JSON.stringify(data));
-        //save the data of the new user
-        window.history.replaceState(null, '', '/');
+            .then(response => response.json())
+            .then(json => {
+                localStorage.setItem("currentUser", JSON.stringify(json));
+                navigate(`/${json.id}`);
+            })
     }
     return (
         <>

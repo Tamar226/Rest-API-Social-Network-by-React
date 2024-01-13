@@ -12,34 +12,12 @@ import NavBar from './components/General/NavBar.jsx'
 import PostMain from './components/Posts/PostMain.jsx'
 import ExitPage from './components/Home/ExitPage.jsx'
 import Info from './components/Info/Info.jsx'
+import AlbumMain from './components/Albums/AlbumMain.jsx'
 function App() {
-  localStorage.setItem("currentUser", JSON.stringify({
-    "id": 1,
-    "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz",
-    "address": {
-      "street": "Kulas Light",
-      "suite": "Apt. 556",
-      "city": "Gwenborough",
-      "zipcode": "92998-3874",
-      "geo": {
-        "lat": "-37.3159",
-        "lng": "81.1496"
-      }
-    },
-    "phone": "1-770-736-8031 x56442",
-    "website": "hildegard.org",
-    "company": {
-      "name": "Romaguera-Crona",
-      "catchPhrase": "Multi-layered client-server neural-net",
-      "bs": "harness real-time e-markets"
-    }
-  }));
   return (
     <>
-    <header>
-      <NavBar/>
+      <header>
+        <NavBar />
       </header>
       <Routes >
         <Route path="">
@@ -52,7 +30,9 @@ function App() {
           <Route path="info" element={<Info />} />
           <Route path="exit" element={<ExitPage />} />
           <Route path="todos" element={<Todos />} />
-          <Route path="albums" element={<Albums />} />
+          <Route path="albums" element={<Albums />} >
+            <Route path=":albumId" element={<AlbumMain />} />
+          </Route>
           <Route path="posts" element={<Posts />} >
             <Route path=":postId" element={<PostMain />} />
           </Route>
