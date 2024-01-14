@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
+import { useState } from 'react';
+
 export default function PostTitle({post}){
   const {id} = useParams();
   const [userPost, setUserPost] = useState({});
