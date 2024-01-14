@@ -11,32 +11,40 @@ function PostMain() {
     const [comments, setComments] = useState([]);
     const [userPost, setUserPost] = useState({});
     const [showAddComment, setShowAddComment] = useState(false);
-    useEffect(() => {
-        async function start() {
-            // await fetch(`http://localhost:3000/posts/${postId}`)
-            //     .then(response => response.json())
-            //     .then(json => {
-            //         setPost(json);
-            //     });
-                //this is the same request but in the form of a promise
-                const data = await fetch(`http://localhost:3000/posts/${postId}`);
-                const json = await data.json();
-                setPost(json);
-                console.log(json);
-            // await fetch(`http://localhost:3000/users/?id=${post.userId}`)
-            //     .then(response => response.json())
-            //     .then(json => {
-            //         console.log(json);
-            //         setUserPost(json[0]);
-            //     });
-            //this is the same request but in the form of a promise
-            const data2 = await fetch(`http://localhost:3000/users/?id=${post.userId}`);
-            const json2 = await data2.json();
-            setUserPost(json2[0]);
-            console.log(json2);
-        }
-        start();
-    }, [showEdit]);
+
+
+    async function startPost() {
+        // await fetch(`http://localhost:3000/posts/${postId}`)
+        //     .then(response => response.json())
+        //     .then(json => {
+        //         setPost(json);
+        //     });
+        //this is the same request but in the form of a promise
+        const data = await fetch(`http://localhost:3000/posts/${postId}`);
+        const json = await data.json();
+        setPost(json);
+        console.log(json);
+        return 1;
+    }
+    async function startUser() {
+        // await fetch(`http://localhost:3000/users/?id=${post.userId}`)
+        //     .then(response => response.json())
+        //     .then(json => {
+        //         console.log(json);
+        //         setUserPost(json[0]);
+        //     });
+        //this is the same request but in the form of a promise
+        const data2 = await fetch(`http://localhost:3000/users/?id=${post.userId}`);
+        const json2 = await data2.json();
+        setUserPost(json2[0]);
+        console.log(json2);
+    }
+
+    useEffect(() => { startPost() }, [showEdit]);
+
+    //useEffect(() => { startPost().then(startUser())}, [showEdit]);
+    //useEffect(() => { if (startPost() === 1) startUser() }, [showEdit]);
+    // useEffect(() => { startUser()}, [post]);
 
     function handleDelete() {
         fetch(`http://localhost:3000/posts/${postId}`, {
@@ -59,9 +67,11 @@ function PostMain() {
 
     return (
         <div>
-            <h5>{post.id} {userPost.name}</h5>
-            <h4>{post.title}</h4>
-            <p>{post.body}</p>
+            <div onClick={()=>startUser()}>
+                <h5>{post.id} {userPost.name}</h5>
+                <h4>{post.title}</h4>
+                <p>{post.body}</p>
+            </div>
             {showEdit && <PostEdit postOrigional={post} setShowEdit={setShowEdit} />}
             {<>
                 {comments.map(comment =>
