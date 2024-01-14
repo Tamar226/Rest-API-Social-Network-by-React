@@ -37,8 +37,6 @@ function Register() {
     <div className="form">
 
       <h2>Sign Up</h2>
-      {signUpMessage && <p style={{ color: 'orange' }}>{signUpMessage}</p>}
-
       <label>User Name:</label>
       <input
         type="text"
@@ -60,9 +58,11 @@ function Register() {
         value={verifyPassword}
         onChange={(e) => setVerifyPassword(e.target.value)} /><br />
 
+      {signUpMessage && <p style={{ color: 'orange' }}>{signUpMessage}</p>}
+
       <div className="connect">
-        <button onClick={() => handleRegistration()}>Connect</button><br />
-        <Link style={{ color: 'orange', fontWeight: 'bold' }} to="/login">Log In</Link>
+        <button onClick={() => handleRegistration()}>Connect</button>
+        <Link style={{ color: 'orange', fontWeight: 'bold' }} to="/login">Log In↩</Link>
       </div>
       {continueSingUp && <CompleteRegistration password={password} userName={userName} />}
 

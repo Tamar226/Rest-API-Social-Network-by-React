@@ -42,10 +42,10 @@ function LogIn() {
                 <label>Password:</label>
                 <input id="addPassword" type="password" placeholder="Write your password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
 
-                {loginMessage && <p style={{ color: 'red' }}>{loginMessage}</p>}
+                {loginMessage && <p style={{ color: 'orange' }}>{loginMessage}</p>}
                 <div className='connectLogIn'>
                     <button onClick={() => handleLogin()}>Click to connect</button>
-                    <Link style={{ color: 'orange' ,fontWeight:'bold'}} to="/register">Register</Link>
+                    <Link style={{ color: 'orange' ,fontWeight:'bold'}} to="/register">Register↪</Link>
                 </div>
             </div>
         </div>

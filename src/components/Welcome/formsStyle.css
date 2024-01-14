@@ -1,6 +1,6 @@
 .form{
     width: 340px;
-    height:450px;
+    height:470px;
     background: #efeded;
     border-radius: 8px;
     box-shadow: 0 0 20px -10px #000;
@@ -62,13 +62,13 @@ button {
     padding: 8px 12px;
     margin: 8px 0 0;
     font-family: 'Montserrat', sans-serif;
-    background-color: #e0f254;
+    background-color: orange;
     cursor: pointer;
     transition: all .3s
 }
 
 button:hover {
-    background: #f2f751;
+    background: rgb(246, 186, 75);
     color: #565454
 }
 
