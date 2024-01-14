@@ -7,7 +7,7 @@ function AlbumTitle ({album}) {
   const {id} = useParams();
   const navigate = useNavigate();
   return (
-    <div onClick={()=>navigate(`/${id}/albums/${album.id}`)}>
+    <div className='singleAlbum' onClick={()=>navigate(`/${id}/albums/${album.id}`)}>
         <h1>{album.id}</h1>
         <h2>{album.title}</h2>
     </div>

@@ -21,3 +21,30 @@ h4{
     box-sizing: border-box;
     border-radius: 15px;
 }
+.album{
+    display: flex;
+  flex-wrap: wrap;
+    justify-content: space-evenly; 
+   width: 85%;
+justify-content: center;
+margin: auto;
+}
+.singleAlbum{
+    
+    border: 3px solid black;
+    margin:5px;
+    padding: 8px;
+    width:27% ;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.singleAlbum h2{
+    width: 80%;
+    margin: auto;
+}
+.singleAlbum h1{
+color: orange;
+
+}
