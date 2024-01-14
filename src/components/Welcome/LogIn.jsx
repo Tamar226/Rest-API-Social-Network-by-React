@@ -17,7 +17,7 @@ function LogIn() {
         }
         const response = await fetch(`http://localhost:3000/users/?username=${userName}`);
         if(!response.ok && response.status != 404){
-            alert("error");
+            setLoginMessage("You don't have an account yet. Create an account to register");
             return;
         }
         const data = await response.json();

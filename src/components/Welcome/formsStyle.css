@@ -13,7 +13,26 @@
     position: relative;
     margin: auto;
 }
-
+.formCompleteDetails{
+    width: 340px;
+    height:750px;
+    background: #efeded;
+    border-radius: 8px;
+    box-shadow: 0 0 20px -10px #000;
+    /* margin-top: 10px; */
+    padding: 20px 30px;
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    position: sticky;
+    margin-top: -50vh;
+    margin-left: 25vw;
+}
+#v{
+    color: orange;
+    font-weight: bolder;
+    margin: 0;
+}
 input {
     width: 100%;
     padding: 10px;
@@ -40,11 +59,9 @@ label:before {
 }
 
 button {
-    float: right;
     padding: 8px 12px;
     margin: 8px 0 0;
     font-family: 'Montserrat', sans-serif;
-    /* background: 0; */
     background-color: #e0f254;
     cursor: pointer;
     transition: all .3s
@@ -61,7 +78,9 @@ button:hover {
     display: flex;
     justify-content: space-between;
 }
-
+.connect{
+    position: sticky;
+}
 .signupGuest{
     display: block;
 }

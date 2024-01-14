@@ -16,7 +16,7 @@ function NavBar() {
     }, [location.pathname]);
     return (
         <nav>
-            <h1>.NET</h1>
+            <h2 className='h2title'>.NET</h2>
             {userIn!=0 && <><h4 ><NavLink to={`/${userIn}/todos`}>Todos</NavLink></h4>
             <h4 ><NavLink to={`/${userIn}/albums`}>Albums</NavLink></h4>
             <h4 ><NavLink to={`/${userIn}/posts`}>Posts</NavLink></h4>

@@ -63,7 +63,8 @@ function CompleteRegistration({userName, password}) {
     }
     return (
         <>
-        <div className='form'>
+        <div className='formCompleteDetails'>
+            <h1 id='v'>✓</h1>
             <h2>Fill in all your details to register:</h2>
             <input
                 type="text"

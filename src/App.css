@@ -8,9 +8,6 @@
   box-sizing: border-box;
 }
 
-.title {
-  font-size: 5em;
-}
 
 nav {
   display: flex;
