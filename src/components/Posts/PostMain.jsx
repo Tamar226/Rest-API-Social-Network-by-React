@@ -21,6 +21,7 @@ function PostMain() {
             await fetch(`http://localhost:3000/users/?id=${post.userId}`)
                 .then(response => response.json())
                 .then(json => {
+                    console.log(json);
                     setUserPost(json[0]);
                 });
         }
