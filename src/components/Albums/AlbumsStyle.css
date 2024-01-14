@@ -12,3 +12,12 @@ h4{
    margin-bottom: 5px;
 
 }
+.pictureEdit{
+    width: 70%;
+    height: 70%;
+    margin: 10vh auto;
+    background-color: white;
+    padding: 20%;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
