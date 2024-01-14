@@ -7,9 +7,9 @@ export default function Todo({ todoId, setTodos }) {
   const [showUpdate, setShowUpdate] = useState(false);
 
   useEffect(() => {
-    function getTodo() {
+    async function getTodo() {
       const url = `http://localhost:3000/todos/${todoId}`;
-      fetch(url)
+      await fetch(url)
         .then(response => response.json())
         .then(json => {
           setTodo(json);
@@ -20,7 +20,7 @@ export default function Todo({ todoId, setTodos }) {
     getTodo();
   }, [showUpdate]);
 
-  function handleChecked() {
+  async function handleChecked() {
     setTodo(todo => ({ ...todo, completed: !todo.completed }));
     const url = `http://localhost:3000/todos/${todoId}`;
     const options = {
@@ -30,7 +30,7 @@ export default function Todo({ todoId, setTodos }) {
       },
       body: JSON.stringify({ completed: !todo.completed })
     }
-    fetch(url, options)
+    await fetch(url, options)
       .then(response => response.json())
       .then(json => {
         console.log(json);
@@ -39,7 +39,7 @@ export default function Todo({ todoId, setTodos }) {
       });
   }
 
-  function handleDelete(){
+  async function handleDelete(){
     const url = `http://localhost:3000/todos/${todoId}`;
     const options = {
       method: 'DELETE',
@@ -47,7 +47,7 @@ export default function Todo({ todoId, setTodos }) {
         'Content-Type': 'application/json'
       },
     }
-    fetch(url, options)
+    await fetch(url, options)
       .then(response => response.json())
       .then(json => {
         console.log(json);

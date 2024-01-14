@@ -1,39 +1,45 @@
-import React ,{useEffect, useState}from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import PictureEdit from './PictureEdit';
 import './AlbumsStyle.css'
-function Picture({ picture,setPictures }) {
-  const [showUpdate, setShowUpdate] = useState(false);
-  const [thisPicture, setThisPicture] = useState(picture);
+function Picture({ picture, setPictures }) {
+    const [showUpdate, setShowUpdate] = useState(false);
+    const [thisPicture, setThisPicture] = useState(picture);
 
     useEffect(() => {
-    fetch(`http://localhost:3000/photos/${picture.id}`)
-      .then(response => response.json())
-      .then(json => {
-        setThisPicture(json);
-      })
-      .catch(e => console.log(e))
+        async function getPic() {
+            await fetch(`http://localhost:3000/photos/${picture.id}`)
+                .then(response => response.json())
+                .then(json => {
+                    setThisPicture(json);
+                })
+                .catch(e => console.log(e))
+        }
+        getPic();
     }, [showUpdate]);
 
-  function handleDelete() {
-    fetch(`http://localhost:3000/photos/${thisPicture.id}`, {
-      method: 'DELETE',
-    })
-      .then(response => response.json())
-      .then(json => {
-        console.log(json);
-      })
-      setPictures(pictures => pictures.filter(picture1 => picture1.id !== thisPicture.id));
-  }
-  return (
-    <div className='photo'>
-      <img src={thisPicture.thumbnailUrl} alt={thisPicture.title} />
-      <h4>{thisPicture.title}</h4>
-      {showUpdate && <PictureEdit picture={thisPicture} setShowEdit={setShowUpdate} />}
-      <button onClick={() => setShowUpdate(true)}>✒️</button>
-      <button onClick={handleDelete}>🗑️</button>
-    </div>
-  )
+    function handleDelete() {
+        async function delPic() {
+            fetch(`http://localhost:3000/photos/${thisPicture.id}`, {
+                method: 'DELETE',
+            })
+            .then(response => response.json())
+            .then(json => {
+                console.log(json);
+            })
+            setPictures(pictures => pictures.filter(picture1 => picture1.id !== thisPicture.id));
+        }
+        delPic();
+    }
+    return (
+        <div className='photo'>
+            <img src={thisPicture.thumbnailUrl} alt={thisPicture.title} />
+            <h4>{thisPicture.title}</h4>
+            {showUpdate && <PictureEdit picture={thisPicture} setShowEdit={setShowUpdate} />}
+            <button onClick={() => setShowUpdate(true)}>✒️</button>
+            <button onClick={handleDelete}>🗑️</button>
+        </div>
+    )
 }
 
 export default Picture
