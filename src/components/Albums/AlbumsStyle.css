@@ -1,18 +1,21 @@
-.pictures{
+.pictures {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-h4{
+
+h4 {
     width: 50%;
     margin: auto;
 }
-.photo{
-   width: 20vw;
-   margin-bottom: 5px;
+
+.photo {
+    width: 20vw;
+    margin-bottom: 5px;
 
 }
-.pictureEdit{
+
+.pictureEdit {
     width: 70%;
     height: 70%;
     margin: 10vh auto;
@@ -21,30 +24,36 @@ h4{
     box-sizing: border-box;
     border-radius: 15px;
 }
-.album{
+
+.album {
     display: flex;
-  flex-wrap: wrap;
-    justify-content: space-evenly; 
-   width: 85%;
-justify-content: center;
-margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 85%;
+    justify-content: center;
+    margin: auto;
 }
-.singleAlbum{
-    
+
+.singleAlbum {
+
     border: 3px solid black;
-    margin:5px;
+    margin: 5px;
     padding: 8px;
-    width:27% ;
+    width: 27%;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
-.singleAlbum h2{
+
+.singleAlbum h2 {
     width: 80%;
     margin: auto;
 }
-.singleAlbum h1{
-color: orange;
+.singleAlbum h2:hover {
+    color:#747bff ;
+}
+.singleAlbum h1 {
+    color: orange;
 
 }
