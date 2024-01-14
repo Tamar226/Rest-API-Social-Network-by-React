@@ -9,13 +9,16 @@ export default function Posts() {
   const [posts, setPosts] = useState([]);  
   const [search, setSearch] = useState('');
   const [showAdd, setShowAdd] = useState(false);
-  // const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 
   function handleSearch() {
-    fetch(`http://localhost:3000/posts/?userId=${id}`)
+    fetch(`http://localhost:3000/posts/?&userId=${id}`)
       .then(response => response.json())
       .then(json => {
         setPosts(json);
+        if (json.length == 0) {
+          setCurrentPage(1);
+      }
       }).catch(error => {
         console.log(error);
       });
@@ -23,13 +26,13 @@ export default function Posts() {
 
   useEffect(() => {
     async function loadPosts() {
-      fetch(`http://localhost:3000/posts/?userId=${id}`)
+      fetch(`http://localhost:3000/posts?_page=${currentPage}&_limit=6&userId=${id}`)
       .then(re => re.json())
       .then(data => setPosts(data))
       .catch(e => console.log(e))
     }
     loadPosts();
-  }, []);
+  }, [currentPage]);
 
   function handleKindChoice(e) {
     if (e.target.innerText === 'All Posts') {
@@ -63,7 +66,8 @@ export default function Posts() {
       {posts.map(p =>
         <PostTitle post={p} key={p.id}/>
       )}
-      {/* <button onClick={() => setCurrentPage(p => p + 1)}>⬅️</button><button onClick={() => setCurrentPage(p => p == 1 ? 1 : p - 1)}>➡️</button> */}
+      <button onClick={() => setCurrentPage(p => p + 1)}>⬅️</button>
+      <button onClick={() => setCurrentPage(p => p == 1 ? 1 : p - 1)}>➡️</button>
     </div>
   )
 }

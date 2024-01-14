@@ -1,0 +1,14 @@
+.pictures{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+h4{
+    width: 50%;
+    margin: auto;
+}
+.photo{
+   width: 20vw;
+   margin-bottom: 5px;
+
+}

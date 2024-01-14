@@ -2,8 +2,8 @@ import React from 'react'
 
 function Picture({picture}){
   return (
-    <div>
-        <img src={picture.url} alt={picture.title}/>
+    <div className='photo'>
+        <img src={picture.thumbnailUrl} alt={picture.title}/>
         <h4>{picture.title}</h4>
     </div>
   )

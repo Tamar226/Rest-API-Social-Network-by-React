@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom';
+import './AlbumsStyle.css'
 
 function AlbumTitle ({album}) {
   const {id} = useParams();

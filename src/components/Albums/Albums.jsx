@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AlbumTitle from './AlbumTitle';
 import { useParams } from 'react-router-dom'
-
+import './AlbumsStyle.css'
 export default function Albums() {
   const { id } = useParams();
   const [albums, setAlbums] = useState([]);
@@ -19,6 +19,7 @@ export default function Albums() {
   return (
     <div className='albums'>
       <h1>Albums</h1>
+      
       {albums.map(album => 
         <AlbumTitle album={album} key={album.id}/>
       )}

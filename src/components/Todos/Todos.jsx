@@ -64,7 +64,8 @@ export default function Todos() {
         <option value="completed">completed</option>
       </select>
       {todos.map(todo => <Todo key={todo.id} todoId={todo.id} setTodos={setTodos} />)}
-      <button onClick={() => setCurrentPage(p => p + 1)}>⬅️</button><button onClick={() => setCurrentPage(p => p == 1 ? 1 : p - 1)}>➡️</button>
+      <button onClick={() => setCurrentPage(p => p + 1)}>⬅️</button>
+      <button onClick={() => setCurrentPage(p => p == 1 ? 1 : p - 1)}>➡️</button>
     </div>
   )
 }
