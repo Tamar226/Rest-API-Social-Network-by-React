@@ -22,9 +22,10 @@ function Register() {
     }
     else {
       const response = await fetch(`http://localhost:3000/users/?username=${userName}`)
-        .catch(error => {
-          console.log("Error:", error);
-        })
+        // .catch(error => {
+        //   console.log("Error:", error);
+        // })
+        setSignUpMessage("User already exists.")
       let data = await response.json();
       console.log(data)
       if (data.length == 0 && password == verifyPassword) {
