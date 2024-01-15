@@ -1,6 +1,8 @@
 .postTitle {
     height: fit-content;
+    max-height: 50vh;
     width: fit-content;
+    max-width: 20%;
     margin: 2vw;
     padding: 1%;
     border-radius: 15px;
@@ -25,16 +27,16 @@
 }
 
 
-.wrapper{
+.wrapper {
     top: 5vh;
     left: 5vh;
     width: 90vw;
     height: 90vh;
     background-color: rgba(156, 138, 236, 0.314);
-    position:absolute;
+    position: absolute;
 }
 
-.postEdit{
+.postEdit {
     width: 70%;
     height: 70%;
     margin: 10vh auto;
@@ -43,20 +45,24 @@
     box-sizing: border-box;
     border-radius: 15px;
 }
-.postsKind{
+
+.postsKind {
     display: flex;
     justify-content: center;
-    
+
 }
-.postsKind h2{
+
+.postsKind h2 {
     margin: 15px;
     border-bottom: 2px double;
 }
+
 .searchButton {
     width: 7vw;
     height: 6.5vh;
 }
-.addPostButton{
+
+.addPostButton {
     margin-left: 75%;
     position: absolute;
     width: 5vw;
@@ -66,35 +72,47 @@
     padding: 3px;
     padding-bottom: 5px;
 }
-p{
+
+p {
     width: 70%;
     margin: auto;
 }
+
 .searchPost input {
     width: 70%;
     margin-right: 15%;
 }
-h3{
-    color:orange;
+
+h3 {
+    color: orange;
 }
-.singleComment{
+
+.singleComment {
     text-align: left;
 }
-h5{
+
+h5 {
     margin-left: 15%;
 }
-.commentsActions{
+
+.commentsActions {
     margin-left: 70%;
     position: absolute;
     margin-top: -80px;
 }
-.privateDetails{
-    text-decoration:underline;
+
+.privateDetails {
+    text-decoration: underline;
 }
-.bodyP{
+
+.bodyP {
     width: 50%;
     justify-content: space-around;
     background-color: rgba(156, 138, 236, 0.314);
-    padding:30px ;
+    padding: 30px;
     border-radius: 5px;
+}
+
+.kindOfPosts {
+    color: orange;
 }

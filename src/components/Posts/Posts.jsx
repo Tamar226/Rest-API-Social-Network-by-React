@@ -27,19 +27,19 @@ export default function Posts() {
 
   async function getPosts() {
     if (postsKind === 'All Posts') {
-      await fetch(`http://localhost:3000/posts?_page=${currentPage}&_limit=5`)
-        .then(re => {if(re.status==404)throw "not found"; return re.json();})
+      await fetch(`http://localhost:3000/posts?_page=${currentPage}&_limit=8`)
+        .then(re => { if (re.status == 404) throw "not found"; return re.json(); })
         .then(data => setPosts(data))
         .catch(e => console.log(e));
       document.querySelector('.postsKind').firstElementChild.classList.add('kindOfPosts');
       document.querySelector('.postsKind').lastElementChild.classList.remove('kindOfPosts');
     } else if (postsKind === 'My Posts') {
-      await fetch(`http://localhost:3000/posts?_page=${currentPage}&_limit=8&userId=${id}`)
+      await fetch(`http://localhost:3000/posts?_page=${currentPage}&_limit=5&userId=${id}`)
         .then(re => re.json())
         .then(data => setPosts(data))
         .catch(e => console.log(e));
-        document.querySelector('.postsKind').firstElementChild.classList.remove('kindOfPosts');
-        document.querySelector('.postsKind').lastElementChild.classList.add('kindOfPosts');
+      document.querySelector('.postsKind').firstElementChild.classList.remove('kindOfPosts');
+      document.querySelector('.postsKind').lastElementChild.classList.add('kindOfPosts');
     }
   }
 
