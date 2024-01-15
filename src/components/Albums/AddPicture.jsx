@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { useParams } from 'react-router-dom';
-
+import './AlbumsStyle.css'
 function AddPicture({setShowAdd, picture,setPictures}) {
     const [title, setTitle] = useState('');
     const [url, setUrl] = useState('');
@@ -29,10 +29,9 @@ function AddPicture({setShowAdd, picture,setPictures}) {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form className='addPicture' onSubmit={handleSubmit}>
                 <input type="text" name="title" value={title} onChange={e=>setTitle(e.target.value)} placeholder="title..." />
-                <input type="text" name="url" value={url} onChange={e=>setUrl(e.target.value)} placeholder="url..." />
-
+                <input type="text" name="url" value={url} onChange={e=>setUrl(e.target.value)} placeholder="url..." /><br/>
                 <button className="btn">submit</button>
             </form>
         </div>

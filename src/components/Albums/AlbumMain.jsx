@@ -31,8 +31,8 @@ function AlbumMain() {
 
     return (
         <div>
-            <h1>{album.title}</h1>
-            <button className='addTodoButton' onClick={() => setShowAdd(true)}>+</button>
+            <h1 className='titelh1'>{album.title}</h1>
+            <button className='addAlbumButton' onClick={() => setShowAdd(true)}>+</button>
             {showAdd && <AddPicture setShowAdd={setShowAdd} setPictures={setPictures} />}
             <div className='pictures'>
                 {pictures.map(picture =>

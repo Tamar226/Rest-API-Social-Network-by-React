@@ -6,14 +6,11 @@ import ExitPage from './ExitPage';
 function Home() {
   const { id } = useParams();
   const name =JSON.parse(localStorage.getItem('currentUser')).name;
-  function logout() {
-    localStorage.removeItem('currentUser');
-  }
   return (
     <>
       <div className='info'>
         <h1>{name}</h1>
-        <Link className='logout' to={`/${id}/exit`} onClick={logout}>Logout</Link>
+        <Link className='logout' to={`/${id}/exit`} onClick={()=> localStorage.removeItem('currentUser')}>Logout</Link>
       </div>
       <div className='home'>
         <NavLink className={"option todosHome"} to={`/${id}/todos`}>

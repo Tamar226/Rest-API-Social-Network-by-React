@@ -6,6 +6,7 @@ import './AlbumsStyle.css'
 export default function Albums() {
   const { id } = useParams();
   const [albums, setAlbums] = useState([]);
+  const [search, setSearch] = useState('');
   
   useEffect(() => {
     function loadPhotos() {
@@ -18,9 +19,28 @@ export default function Albums() {
     }
     loadPhotos();
 }, []);
+function handleSearch(){
+  const searchValue = search.toLowerCase();
+  const filteredAlbums = albums.filter(album => {
+    return (
+      album.id.toString().includes(searchValue) ||
+      album.title.toLowerCase().includes(searchValue)
+    );
+  });
+
+  setAlbums(filteredAlbums);
+}
   return (
     <div className='albums'>
-      <h1>Albums</h1>
+      <h1 className='titelh1'>Albums</h1>
+      <input
+        type="search"
+        className='searchPost'
+        placeholder='Search by album ID or title...'
+        onChange={e => setSearch(e.target.value)}
+        value={search}
+      />
+      <button type="submit" className='searchButton' onClick={handleSearch}>🔍</button>
       <div className='album'>
       {albums.map(album => 
         <AlbumTitle album={album} key={album.id}/>

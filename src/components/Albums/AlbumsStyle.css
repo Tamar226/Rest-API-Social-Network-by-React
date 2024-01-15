@@ -1,10 +1,12 @@
-
 .pictures {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-
+.wrapper{
+    width: 60%;
+    margin-left: 20%;
+}
 h4 {
     width: 50%;
     margin: auto;
@@ -37,7 +39,7 @@ h4 {
 
 .singleAlbum {
 
-    border: 3px solid black;
+    border: 3px solid rgb(156, 138, 236, 0.314);
     margin: 5px;
     padding: 8px;
     width: 27%;
@@ -50,11 +52,40 @@ h4 {
 .singleAlbum h2 {
     width: 80%;
     margin: auto;
+
 }
+
 .singleAlbum h2:hover {
-    color:#747bff ;
+    color: #747bff;
 }
+
 .singleAlbum h1 {
     color: orange;
 
+}
+
+.addAlbumButton {
+    margin: auto;
+    margin-top: -10vh;
+    position: absolute;
+    width: 5vw;
+    border: 2px double orange;
+    font-size: 25px;
+    font-weight: bolder;
+    padding: 3px;
+    padding-bottom: 5px;
+}
+
+.titelh1 {
+    margin-bottom: 100px;
+}
+
+.addPicture {
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 50px;
+    width: 40%;
+    justify-content: space-around;
+    background-color: rgba(156, 138, 236, 0.314);
+    border-radius: 15px;
 }
