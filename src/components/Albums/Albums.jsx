@@ -7,7 +7,7 @@ export default function Albums() {
   const { id } = useParams();
   const [albums, setAlbums] = useState([]);
   const [search, setSearch] = useState('');
-  
+
   useEffect(() => {
     function loadPhotos() {
       fetch(`http://localhost:3000/albums/?userId=${id}`)
@@ -18,18 +18,18 @@ export default function Albums() {
         .catch(e => console.log(e))
     }
     loadPhotos();
-}, []);
-function handleSearch(){
-  const searchValue = search.toLowerCase();
-  const filteredAlbums = albums.filter(album => {
-    return (
-      album.id.toString().includes(searchValue) ||
-      album.title.toLowerCase().includes(searchValue)
-    );
-  });
+  }, []);
+  function handleSearch() {
+    const searchValue = search.toLowerCase();
+    const filteredAlbums = albums.filter(album => {
+      return (
+        album.id.toString().includes(searchValue) ||
+        album.title.toLowerCase().includes(searchValue)
+      );
+    });
 
-  setAlbums(filteredAlbums);
-}
+    setAlbums(filteredAlbums);
+  }
   return (
     <div className='albums'>
       <h1 className='titelh1'>Albums</h1>
@@ -42,9 +42,9 @@ function handleSearch(){
       />
       <button type="submit" className='searchButton' onClick={handleSearch}>🔍</button>
       <div className='album'>
-      {albums.map(album => 
-        <AlbumTitle album={album} key={album.id}/>
-      )}</div>
+        {albums.map(album =>
+          <AlbumTitle album={album} key={album.id} />
+        )}</div>
     </div>
   )
 }

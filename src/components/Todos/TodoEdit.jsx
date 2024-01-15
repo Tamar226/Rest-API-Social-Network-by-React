@@ -24,7 +24,7 @@ function TodoEdit({ setShowEdit, todo }) {
 
     return (
         <div className='wrapper'>
-        <button onClick={()=>setShowEdit(false)}>x</button>
+            <button onClick={() => setShowEdit(false)}>x</button>
             <div className='todoEdit'>
                 <h2>{todo.id}</h2>
                 <input type="text" value={title} onChange={e => setTitle(e.target.value)} />

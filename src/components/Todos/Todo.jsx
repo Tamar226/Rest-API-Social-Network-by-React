@@ -39,7 +39,7 @@ export default function Todo({ todoId, setTodos }) {
       });
   }
 
-  async function handleDelete(){
+  async function handleDelete() {
     const url = `http://localhost:3000/todos/${todoId}`;
     const options = {
       method: 'DELETE',
@@ -54,16 +54,16 @@ export default function Todo({ todoId, setTodos }) {
       }).catch(error => {
         console.log(error);
       });
-      setTodos(todos => todos.filter(todo => todo.id !== todoId));
+    setTodos(todos => todos.filter(todo => todo.id !== todoId));
   }
 
   return (
     <div className='todo'>
-      <input type="checkbox" checked={todo.completed} onClick={handleChecked}/>
+      <input type="checkbox" checked={todo.completed} onClick={handleChecked} />
       <h6>{todo.id}</h6>
       <p>{todo.title}</p>
-      {showUpdate && <TodoEdit todo={todo} setShowEdit={setShowUpdate}/>}
-      <button onClick={()=>setShowUpdate(true)}>✒️</button>
+      {showUpdate && <TodoEdit todo={todo} setShowEdit={setShowUpdate} />}
+      <button onClick={() => setShowUpdate(true)}>✒️</button>
       <button onClick={handleDelete}>🗑️</button>
     </div>
   )

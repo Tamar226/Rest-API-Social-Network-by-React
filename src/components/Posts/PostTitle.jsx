@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 import { useState } from 'react';
 
-export default function PostTitle({post}){
-  const {id} = useParams();
+export default function PostTitle({ post }) {
+  const { id } = useParams();
   const [userPost, setUserPost] = useState({});
   useEffect(() => {
     fetch(`http://localhost:3000/users/?id=${post.userId}`)
@@ -15,7 +15,7 @@ export default function PostTitle({post}){
   }, []);
   return (
     <NavLink to={`/${id}/posts/${post.id}`}
-     className='postTitle'>
+      className='postTitle'>
       <h5>{`${post.id} ${userPost.name}`}</h5>
       <h4>{post.title}</h4>
     </NavLink>

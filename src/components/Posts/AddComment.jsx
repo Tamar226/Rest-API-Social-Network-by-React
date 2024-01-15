@@ -19,11 +19,11 @@ function AddComment({ setShowAddComment, setComments }) {
         fetch(url, options)
             .then(response => response.json())
             .then(json => {
-                setComments(comments=>comments.concat({body:body, email: user.email, name: user.name, id: json.id}));
+                setComments(comments => comments.concat({ body: body, email: user.email, name: user.name, id: json.id }));
             }).catch(error => {
                 console.log(error);
             });
-        
+
         setShowAddComment(false);
     }
 

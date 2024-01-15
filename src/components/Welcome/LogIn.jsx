@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Home from "../Home/Home"
-import { Routes, Route,Link } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import './formsStyle.css';
 
@@ -16,7 +16,7 @@ function LogIn() {
             return;
         }
         const response = await fetch(`http://localhost:3000/users/?username=${userName}`);
-        if(!response.ok && response.status != 404){
+        if (!response.ok && response.status != 404) {
             setLoginMessage("You don't have an account yet. Create an account to register");
             return;
         }
@@ -39,13 +39,13 @@ function LogIn() {
                 <label>User Name:</label>
                 <input id="addName" type="username" placeholder="Write your user name" value={userName} onChange={(e) => setUserName(e.target.value)} /><br />
 
-                <label>Password:</label>
+                <label>Password:</label><br/>
                 <input id="addPassword" type="password" placeholder="Write your password" value={password} onChange={(e) => setPassword(e.target.value)} /><br />
 
                 {loginMessage && <p style={{ color: 'orange' }}>{loginMessage}</p>}
                 <div className='connectLogIn'>
                     <button onClick={() => handleLogin()}>Click to connect</button>
-                    <Link style={{ color: 'orange' ,fontWeight:'bold'}} to="/register">Register↪</Link>
+                    <Link style={{ color: 'orange', fontWeight: 'bold' }} to="/register">Register↪</Link>
                 </div>
             </div>
         </div>

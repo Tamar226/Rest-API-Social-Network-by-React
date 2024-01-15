@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 
 export default function Posts() {
   const { id } = useParams();
-  const [posts, setPosts] = useState([]);  
+  const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState('');
   const [showAdd, setShowAdd] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,7 +18,7 @@ export default function Posts() {
         setPosts(json);
         if (json.length == 0) {
           setCurrentPage(1);
-      }
+        }
       }).catch(error => {
         console.log(error);
       });
@@ -27,9 +27,9 @@ export default function Posts() {
   useEffect(() => {
     async function loadPosts() {
       fetch(`http://localhost:3000/posts?_page=${currentPage}&_limit=6&userId=${id}`)
-      .then(re => re.json())
-      .then(data => setPosts(data))
-      .catch(e => console.log(e))
+        .then(re => re.json())
+        .then(data => setPosts(data))
+        .catch(e => console.log(e))
     }
     loadPosts();
   }, [currentPage]);
@@ -37,16 +37,16 @@ export default function Posts() {
   function handleKindChoice(e) {
     if (e.target.innerText === 'All Posts') {
       fetch(`http://localhost:3000/posts`)
-      .then(re => re.json())
-      .then(data => setPosts(data))
-      .catch(e => console.log(e));
+        .then(re => re.json())
+        .then(data => setPosts(data))
+        .catch(e => console.log(e));
       e.target.classList.add('kindOfPosts');
       e.target.nextElementSibling.classList.remove('kindOfPosts');
     } else if (e.target.innerText === 'My Posts') {
       fetch(`http://localhost:3000/posts/?userId=${id}`)
-      .then(re => re.json())
-      .then(data => setPosts(data))
-      .catch(e => console.log(e));
+        .then(re => re.json())
+        .then(data => setPosts(data))
+        .catch(e => console.log(e));
       e.target.classList.add('kindOfPosts');
       e.target.previousElementSibling.classList.remove('kindOfPosts');
     }
@@ -60,16 +60,16 @@ export default function Posts() {
       </div>
       <button className='addPostButton' onClick={() => setShowAdd(true)}>+</button>
       {showAdd && <AddPost setShowAdd={setShowAdd} setPosts={setPosts} />}
-       <input type="search" className='searchPost' placeholder='search...'
+      <input type="search" className='searchPost' placeholder='search...'
         onChange={e => setSearch(e.target.value)} value={search} onSubmit={handleSearch} />
       <button type="submit" className='searchButton' onClick={handleSearch}>🔍</button>
       <div className='posts'>
-      {posts.map(p =>
-        <PostTitle post={p} key={p.id}/>
-      )} </div>
+        {posts.map(p =>
+          <PostTitle post={p} key={p.id} />
+        )} </div>
       <button onClick={() => setCurrentPage(p => p + 1)}>⬅️</button>
       <button onClick={() => setCurrentPage(p => p == 1 ? 1 : p - 1)}>➡️</button>
-   
+
     </>
   )
 }

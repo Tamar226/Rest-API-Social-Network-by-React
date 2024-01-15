@@ -44,14 +44,14 @@ function Register() {
         value={userName}
         onChange={(e) => setUserName(e.target.value)} /><br />
 
-      <label>Password:</label>
+      <label>Password:</label><br/>
       <input
         type="password"
         placeholder="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)} /><br />
 
-      <label>Verify Password:</label>
+      <label>Verify Password:</label><br/>
       <input
         type="passwordVerify"
         placeholder="verify password"

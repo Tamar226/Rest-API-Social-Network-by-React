@@ -67,7 +67,7 @@ function PostMain() {
 
     return (
         <div>
-            <div onClick={()=>startUser()}>
+            <div onClick={() => startUser()}>
                 <h3>{post.id} {userPost.name}</h3>
                 <h4>{post.title}</h4>
                 <p className='bodyP'>{post.body}</p>

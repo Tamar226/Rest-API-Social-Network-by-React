@@ -3,10 +3,12 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-.wrapper{
+
+.wrapper {
     width: 60%;
     margin-left: 20%;
 }
+
 h4 {
     width: 50%;
     margin: auto;

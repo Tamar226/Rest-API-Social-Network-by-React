@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-function EditComment({comment, setShowEdit}){
+function EditComment({ comment, setShowEdit }) {
     const [body, setBody] = useState(comment.body);
 
     function handleUpdate() {
@@ -11,7 +11,7 @@ function EditComment({comment, setShowEdit}){
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({...comment, body: body })
+            body: JSON.stringify({ ...comment, body: body })
         }
         fetch(url, options)
             .then(response => response.json())
@@ -25,7 +25,7 @@ function EditComment({comment, setShowEdit}){
 
     return (
         <div className='wrapper'>
-        <button onClick={()=>setShowEdit(false)}>x</button>
+            <button onClick={() => setShowEdit(false)}>x</button>
             <div className='commentEdit'>
                 <h2>{comment.id}</h2>
                 <input type="text" value={body} onChange={e => setBody(e.target.value)} />

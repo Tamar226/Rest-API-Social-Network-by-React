@@ -24,7 +24,7 @@ function PictureEdit({ setShowEdit, picture }) {
 
     return (
         <div className='wrapper'>
-        <button onClick={()=>setShowEdit(false)}>x</button>
+            <button onClick={() => setShowEdit(false)}>x</button>
             <div className='pictureEdit'>
                 <h2>{picture.id}</h2>
                 <input type="text" value={title} onChange={e => setTitle(e.target.value)} />

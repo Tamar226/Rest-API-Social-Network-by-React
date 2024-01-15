@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
 
-function AddTodo({setShowAdd, setTodos}) {
+function AddTodo({ setShowAdd, setTodos }) {
     const [title, setTitle] = useState('');
-    const {id} = useParams();
+    const { id } = useParams();
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -18,17 +18,17 @@ function AddTodo({setShowAdd, setTodos}) {
         fetch(url, options)
             .then(response => response.json())
             .then(json => {
-                setTodos(todos=>todos.concat(json));
+                setTodos(todos => todos.concat(json));
             }).catch(error => {
                 console.log(error);
             });
-            setShowAdd(false);
+        setShowAdd(false);
     }
 
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="title" value={title} onChange={e=>setTitle(e.target.value)} placeholder="title..." />
+                <input type="text" name="title" value={title} onChange={e => setTitle(e.target.value)} placeholder="title..." />
                 <button className="btn">submit</button>
             </form>
         </div>

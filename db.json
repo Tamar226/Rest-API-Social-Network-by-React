@@ -3825,13 +3825,6 @@
     },
     {
       "albumId": 4,
-      "id": 191,
-      "title": "magni fuga alias non consectetur dolorum tempora",
-      "url": "https://via.placeholder.com/600/258967",
-      "thumbnailUrl": "https://via.placeholder.com/150/258967"
-    },
-    {
-      "albumId": 4,
       "id": 192,
       "title": "non deleniti nihil provident eveniet",
       "url": "https://via.placeholder.com/600/70f7e3",
@@ -37491,6 +37484,12 @@
       "url": "http://localhost:3000/photos",
       "userId": "1",
       "id": 5001
+    },
+    {
+      "title": "NEW ONE:)",
+      "url": "http://localhost:3000/photos",
+      "userId": "1",
+      "id": 5002
     }
   ],
   "comments": [

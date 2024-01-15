@@ -1,36 +1,39 @@
-.form{
-    width: 340px;
-    height:470px;
+.form {
+    width: 350px;
+    height: 470px;
     background: #efeded;
     border-radius: 8px;
     box-shadow: 0 0 20px -10px #000;
     margin-top: 40px;
-    padding: 20px 30px;
+    padding: 20px;
     max-width: calc(100vw - 40px);
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     position: relative;
     margin: auto;
 }
-.formCompleteDetails{
+
+.formCompleteDetails {
     width: 340px;
-    height:750px;
+    height: 750px;
     background: #efeded;
     border-radius: 8px;
     box-shadow: 0 0 20px -10px #000;
-    padding: 20px 30px;
+    padding: 20px ;
     max-width: calc(100vw - 40px);
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     position: sticky;
     margin-top: -50vh;
-    margin-left: 25vw;
+    margin-left: 28vw;
 }
-#v{
+
+#v {
     color: orange;
     font-weight: bolder;
     margin: 0;
 }
+
 input {
     width: 100%;
     padding: 10px;
@@ -70,15 +73,17 @@ button:hover {
     color: #565454
 }
 
-.connectLogIn{
+.connectLogIn {
     margin-top: 20px;
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
 }
-.connect{
+
+.connect {
     position: sticky;
 }
-.signupGuest{
+
+.signupGuest {
     display: block;
 }

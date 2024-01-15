@@ -16,7 +16,7 @@ export default function Todos() {
       .then(response => response.json())
       .then(json => {
         setTodos(json);
-        if (json.length==0) {
+        if (json.length == 0) {
           setCurrentPage(1);
         }
       }).catch(error => {
@@ -56,14 +56,14 @@ export default function Todos() {
         onChange={e => setSearch(e.target.value)} value={search} onSubmit={handleSearch} />
       <button type="submit" className='searchButton' onClick={handleSearch}>🔍</button>
       <div className='addSelect'>
-      <button className='addTodoButton' onClick={() => setShowAdd(true)}>+</button>
-      {showAdd && <AddTodo setShowAdd={setShowAdd} setTodos={setTodos} />}
-      <select className='selectTodo' value={selection} onChange={e => setSelection(e.target.value)}>
-        <option value="serial">serial</option>
-        <option value="alphabedacil">alphabedacil</option>
-        <option value="random">random</option>
-        <option value="completed">completed</option>
-      </select>
+        <button className='addTodoButton' onClick={() => setShowAdd(true)}>+</button>
+        {showAdd && <AddTodo setShowAdd={setShowAdd} setTodos={setTodos} />}
+        <select className='selectTodo' value={selection} onChange={e => setSelection(e.target.value)}>
+          <option value="serial">serial</option>
+          <option value="alphabedacil">alphabedacil</option>
+          <option value="random">random</option>
+          <option value="completed">completed</option>
+        </select>
       </div>
       {todos.map(todo => <Todo key={todo.id} todoId={todo.id} setTodos={setTodos} />)}
       <button onClick={() => setCurrentPage(p => p + 1)}>⬅️</button>
