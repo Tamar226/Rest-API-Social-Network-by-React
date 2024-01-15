@@ -25,16 +25,6 @@ export default function Posts() {
       });
   };
 
-  // useEffect(() => {
-  //   async function loadPosts() {
-  //     fetch(`http://localhost:3000/posts?_page=${currentPage}&_limit=5&userId=${id}`)
-  //       .then(re => re.json())
-  //       .then(data => setPosts(data))
-  //       .catch(e => console.log(e))
-  //   }
-  //   loadPosts();
-  // }, [currentPage]);
-
   async function getPosts() {
     if (postsKind === 'All Posts') {
       await fetch(`http://localhost:3000/posts?_page=${currentPage}&_limit=5`)
