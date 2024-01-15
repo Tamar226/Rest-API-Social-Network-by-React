@@ -15,13 +15,13 @@ function LogIn() {
             setLoginMessage('Please fill in all fields.');
             return;
         }
-        const response = await fetch(`http://localhost:3000/users/?username=${userName}`);
+        const response = await fetch(`http://localhost:3000/users/?username=${userName}&website=${password}`);
         if (!response.ok && response.status != 404) {
             setLoginMessage("You don't have an account yet. Create an account to register");
             return;
         }
         const data = await response.json();
-        if (data[0].website == password) {
+        if (data[0]) {
             localStorage.setItem("currentUser", JSON.stringify(data[0]));
             navigate(`/${data[0].id}`);
         }

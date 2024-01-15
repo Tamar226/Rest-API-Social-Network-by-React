@@ -34,7 +34,8 @@ function Register() {
 
   }
   return (
-    <div className="form">
+    <>
+    {!continueSingUp&&<div className="form">
 
       <h2>Sign Up</h2>
       <label>User Name:</label>
@@ -64,9 +65,10 @@ function Register() {
         <button onClick={() => handleRegistration()}>Connect</button>
         <Link style={{ color: 'orange', fontWeight: 'bold' }} to="/login">Log In↩</Link>
       </div>
-      {continueSingUp && <CompleteRegistration password={password} userName={userName} />}
+      
 
-    </div>
+    </div>}
+    {continueSingUp && <CompleteRegistration password={password} userName={userName} />}</>
   )
 }
 

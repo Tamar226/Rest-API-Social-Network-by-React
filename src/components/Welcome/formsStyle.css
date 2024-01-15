@@ -89,5 +89,16 @@ button:hover {
 }
 .enteringButtons{
     display: flex;
-    
+    position: absolute;
+    margin-top: 59vh;
+    margin-left: 45%;
+}
+.enteringButtons:hover{
+text-decoration: underline orange;
+
+}
+.logoImage{
+height: 50vh;
+width: 20%;
+margin: auto;
 }

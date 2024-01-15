@@ -25,7 +25,6 @@ function Info() {
                     </li>
                 </ul>
                 <p>phone: {currentuser.phone}</p>
-                <p>website: {currentuser.website}</p>
                 <p>company:</p>
                 <ul>
                     <li>name: {currentuser.company.name}</li>

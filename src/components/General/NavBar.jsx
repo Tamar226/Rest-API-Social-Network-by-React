@@ -17,8 +17,9 @@ function NavBar() {
     return (
         <nav>
             <h2 className='h2title'>.NET</h2>
-            <h4 ><NavLink to={`/${userIn}`}>Home</NavLink></h4>
-            {userIn != 0 && <><h4 ><NavLink to={`/${userIn}/todos`}>Todos</NavLink></h4>
+            {userIn != 0 && <>
+                <h4 ><NavLink to={`/${userIn}`}>Home</NavLink></h4>
+                <h4 ><NavLink to={`/${userIn}/todos`}>Todos</NavLink></h4>
                 <h4 ><NavLink to={`/${userIn}/albums`}>Albums</NavLink></h4>
                 <h4 ><NavLink to={`/${userIn}/posts`}>Posts</NavLink></h4>
                 <h4 ><NavLink to={`/${userIn}/info`}>Info</NavLink></h4></>
