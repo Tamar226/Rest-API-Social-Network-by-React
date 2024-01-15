@@ -14,8 +14,8 @@ export default function Posts() {
 
   function handleSearch() {
     const url = postsKind == "All Posts" ?
-    `http://localhost:3000/posts?_page=${currentPage}&_limit=6&q=${search}` :
-    `http://localhost:3000/posts?_page=${currentPage}&_limit=6&q=${search}&userId=${id}`;
+      `http://localhost:3000/posts?_page=${currentPage}&_limit=6&q=${search}` :
+      `http://localhost:3000/posts?_page=${currentPage}&_limit=6&q=${search}&userId=${id}`;
     fetch(url)
       .then(response => response.json())
       .then(json => {

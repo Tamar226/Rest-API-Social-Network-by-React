@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import './postsStyle.css'
 
 function EditComment({ comment, setShowEdit }) {
     const [body, setBody] = useState(comment.body);
@@ -24,11 +25,11 @@ function EditComment({ comment, setShowEdit }) {
     }
 
     return (
-        <div className='wrapper'>
+        <div className='wrapperEditComment'>
             <button onClick={() => setShowEdit(false)}>x</button>
             <div className='commentEdit'>
                 <h2>{comment.id}</h2>
-                <input type="text" value={body} onChange={e => setBody(e.target.value)} />
+                <input type="text" value={body} onChange={e => setBody(e.target.value)} /><br/>
                 <button onClick={handleUpdate}>update</button>
             </div>
         </div>

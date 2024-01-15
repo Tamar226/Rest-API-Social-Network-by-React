@@ -27,13 +27,24 @@
 }
 
 
-.wrapper {
+.wrapperEditComment {
     top: 5vh;
     left: 5vh;
-    width: 90vw;
-    height: 90vh;
+    width: 50vw;
+    height: 50vh;
     background-color: rgba(156, 138, 236, 0.314);
-    position: absolute;
+    position: fixed;
+    margin-left: 50vh;
+
+}
+
+.commentEdit {
+    background-color: rgb(253, 254, 255);
+    text-align: center;
+    width: 80%;
+    height: 60%;
+    margin-left: 5vw;
+    border-radius: 5px;
 }
 
 .postEdit {
