@@ -26,7 +26,7 @@ export default function Posts() {
 
   useEffect(() => {
     async function loadPosts() {
-      fetch(`http://localhost:3000/posts?_page=${currentPage}&_limit=6&userId=${id}`)
+      fetch(`http://localhost:3000/posts?_page=${currentPage}&_limit=5&userId=${id}`)
         .then(re => re.json())
         .then(data => setPosts(data))
         .catch(e => console.log(e))
@@ -34,16 +34,16 @@ export default function Posts() {
     loadPosts();
   }, [currentPage]);
 
-  function handleKindChoice(e) {
+  async function handleKindChoice(e) {
     if (e.target.innerText === 'All Posts') {
-      fetch(`http://localhost:3000/posts`)
+      await fetch(`http://localhost:3000/posts_page=${currentPage}&_limit=5`)
         .then(re => re.json())
         .then(data => setPosts(data))
         .catch(e => console.log(e));
       e.target.classList.add('kindOfPosts');
       e.target.nextElementSibling.classList.remove('kindOfPosts');
     } else if (e.target.innerText === 'My Posts') {
-      fetch(`http://localhost:3000/posts/?userId=${id}`)
+      await fetch(`http://localhost:3000/posts?_page=${currentPage}&_limit=8&userId=${id}`)
         .then(re => re.json())
         .then(data => setPosts(data))
         .catch(e => console.log(e));
