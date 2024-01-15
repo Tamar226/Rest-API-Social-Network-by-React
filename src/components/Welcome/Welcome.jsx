@@ -4,10 +4,11 @@ import NavBar from '../General/NavBar'
 function Welcome() {
     return (
         <>
-            <h2 className='h2title'>.NET</h2>
-            <div className='enteringButtons'>
+        <div className='enteringButtons'>
             <h3><NavLink to={"/login"}>Login</NavLink></h3>
-            <h3><NavLink to={"/register"}>Register</NavLink></h3></div>
+            <h3><NavLink to={"/register"}>Register</NavLink></h3>
+            <img src="src\assets\Blue_Elegant_Concept_Foundation_Logo__1_-removebg-preview.png" />
+            </div>
         </>
     )
 }

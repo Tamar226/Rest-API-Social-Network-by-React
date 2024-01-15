@@ -87,3 +87,7 @@ button:hover {
 .signupGuest {
     display: block;
 }
+.enteringButtons{
+    display: flex;
+    
+}

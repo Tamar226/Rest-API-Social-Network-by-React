@@ -32,7 +32,7 @@ function Comment({ comment }) {
             <h5>{newComment.id}✓✓</h5>
             <p className='privateDetails'>{newComment.name}</p>
             <p className='privateDetails'>{newComment.email}</p>
-            <p>{newComment.body}<hr /></p>
+            <p>{newComment.body}</p><hr />
             <div className='commentsActions'>
                 {showEdit && <EditComment comment={newComment} setShowEdit={setShowEdit} />}
                 {user.email == newComment.email && <><button onClick={() => setShowEdit(true)}>✒️</button>
