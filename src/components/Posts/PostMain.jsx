@@ -68,9 +68,9 @@ function PostMain() {
     return (
         <div>
             <div onClick={()=>startUser()}>
-                <h5>{post.id} {userPost.name}</h5>
+                <h3>{post.id} {userPost.name}</h3>
                 <h4>{post.title}</h4>
-                <p>{post.body}</p>
+                <p className='bodyP'>{post.body}</p>
             </div>
             {showEdit && <PostEdit postOrigional={post} setShowEdit={setShowEdit} />}
             {<>

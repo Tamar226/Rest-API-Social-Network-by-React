@@ -53,21 +53,23 @@ export default function Posts() {
   }
 
   return (
-    <div className='posts'>
+    <>
       <div className='postsKind'>
-        <h1 onClick={handleKindChoice}>All Posts</h1>
-        <h1 onClick={handleKindChoice} className='kindOfPosts'>My Posts</h1>
+        <h2 onClick={handleKindChoice}>All Posts🤨</h2>
+        <h2 onClick={handleKindChoice} className='kindOfPosts'>My Posts🤗</h2>
       </div>
-      <button className='addTodoButton' onClick={() => setShowAdd(true)}>+</button>
+      <button className='addPostButton' onClick={() => setShowAdd(true)}>+</button>
       {showAdd && <AddPost setShowAdd={setShowAdd} setPosts={setPosts} />}
        <input type="search" className='searchPost' placeholder='search...'
         onChange={e => setSearch(e.target.value)} value={search} onSubmit={handleSearch} />
       <button type="submit" className='searchButton' onClick={handleSearch}>🔍</button>
+      <div className='posts'>
       {posts.map(p =>
         <PostTitle post={p} key={p.id}/>
-      )}
+      )} </div>
       <button onClick={() => setCurrentPage(p => p + 1)}>⬅️</button>
       <button onClick={() => setCurrentPage(p => p == 1 ? 1 : p - 1)}>➡️</button>
-    </div>
+   
+    </>
   )
 }

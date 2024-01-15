@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import EditComment from './EditComment';
-
+import './postsStyle.css'
 function Comment({ comment }) {
     const user = JSON.parse(localStorage.getItem('currentUser'));
     const [showEdit, setShowEdit] = useState(false);
@@ -28,14 +28,15 @@ function Comment({ comment }) {
     }
 
     return (
-        <div>
-            <h6>{newComment.id}</h6>
-            <p>{newComment.name}</p>
-            <p>{newComment.email}</p>
-            <p>{newComment.body}</p>
+        <div className='singleComment'>
+            <h5>{newComment.id}✓✓</h5>
+            <p className='privateDetails'>{newComment.name}</p>
+            <p className='privateDetails'>{newComment.email}</p>
+            <p>{newComment.body}<hr/></p>
+            <div className='commentsActions'>
             {showEdit && <EditComment comment={newComment} setShowEdit={setShowEdit} />}
             {user.email==newComment.email && <><button onClick={()=>setShowEdit(true)}>✒️</button>
-            <button onClick={handleDelete}>🗑️</button></>}
+            <button onClick={handleDelete}>🗑️</button></>}</div>
         </div>
     )
 }
