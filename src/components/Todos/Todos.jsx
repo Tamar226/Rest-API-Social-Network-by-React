@@ -35,7 +35,7 @@ export default function Todos() {
   };
 
   useEffect(() => {
-    let sortedTodos = [...todos]; // Create a copy of the array
+    let sortedTodos = [...todos]; 
 
     if (selection === 'serial') {
       sortedTodos.sort((a, b) => a.id - b.id);

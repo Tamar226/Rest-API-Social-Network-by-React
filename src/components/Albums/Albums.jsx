@@ -20,6 +20,13 @@ export default function Albums() {
     loadPhotos();
   }, []);
   function handleSearch() {
+    fetch(`http://localhost:3000/albums?q=${search}`)
+      .then(response => response.json())
+      .then(json => {
+        setPosts(json);
+      }).catch(error => {
+        console.log(error);
+      });
     const searchValue = search.toLowerCase();
     const filteredAlbums = albums.filter(album => {
       return (
@@ -36,7 +43,7 @@ export default function Albums() {
       <input
         type="search"
         className='searchPost'
-        placeholder='Search by album ID or title...'
+        placeholder='Search...'
         onChange={e => setSearch(e.target.value)}
         value={search}
       />

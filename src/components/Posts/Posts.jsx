@@ -13,7 +13,10 @@ export default function Posts() {
   const [postsKind, setPostsKind] = useState('My Posts');
 
   function handleSearch() {
-    fetch(`http://localhost:3000/posts/?&userId=${id}`)
+    const url = postsKind == "All Posts" ?
+    `http://localhost:3000/posts?_page=${currentPage}&_limit=6&q=${search}` :
+    `http://localhost:3000/posts?_page=${currentPage}&_limit=6&q=${search}&userId=${id}`;
+    fetch(url)
       .then(response => response.json())
       .then(json => {
         setPosts(json);
@@ -27,7 +30,7 @@ export default function Posts() {
 
   async function getPosts() {
     if (postsKind === 'All Posts') {
-      await fetch(`http://localhost:3000/posts?_page=${currentPage}&_limit=8`)
+      await fetch(`http://localhost:3000/posts?_page=${currentPage}&_limit=6`)
         .then(re => { if (re.status == 404) throw "not found"; return re.json(); })
         .then(data => setPosts(data))
         .catch(e => console.log(e));

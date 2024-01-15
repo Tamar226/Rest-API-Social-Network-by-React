@@ -16,6 +16,7 @@ function NavBar() {
     }, [location.pathname]);
     return (
         <nav>
+            <img src="src\assets\colorful_idea.png" alt="colorful idea"/>
             <h2 className='h2title'>.NET</h2>
             {userIn != 0 && <>
                 <h4 ><NavLink to={`/${userIn}`}>Home</NavLink></h4>

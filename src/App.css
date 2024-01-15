@@ -28,7 +28,10 @@ nav {
 nav a:hover {
   border-bottom: solid 3px orange;
 }
-
+nav img{
+  height: 60px;
+  width: 65px;
+}
 a {
   margin: 20px;
   text-decoration: inherit;
