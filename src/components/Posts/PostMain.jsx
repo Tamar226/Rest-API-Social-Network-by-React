@@ -12,7 +12,6 @@ function PostMain() {
     const [userPost, setUserPost] = useState({});
     const [showAddComment, setShowAddComment] = useState(false);
 
-
     async function startPost() {
         // await fetch(`http://localhost:3000/posts/${postId}`)
         //     .then(response => response.json())

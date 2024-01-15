@@ -10,6 +10,7 @@ export default function Posts() {
   const [search, setSearch] = useState('');
   const [showAdd, setShowAdd] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [postsKind, setPostsKind] = useState('My Posts');
 
   function handleSearch() {
     fetch(`http://localhost:3000/posts/?&userId=${id}`)
@@ -24,39 +25,41 @@ export default function Posts() {
       });
   };
 
-  useEffect(() => {
-    async function loadPosts() {
-      fetch(`http://localhost:3000/posts?_page=${currentPage}&_limit=5&userId=${id}`)
-        .then(re => re.json())
-        .then(data => setPosts(data))
-        .catch(e => console.log(e))
-    }
-    loadPosts();
-  }, [currentPage]);
+  // useEffect(() => {
+  //   async function loadPosts() {
+  //     fetch(`http://localhost:3000/posts?_page=${currentPage}&_limit=5&userId=${id}`)
+  //       .then(re => re.json())
+  //       .then(data => setPosts(data))
+  //       .catch(e => console.log(e))
+  //   }
+  //   loadPosts();
+  // }, [currentPage]);
 
-  async function handleKindChoice(e) {
-    if (e.target.innerText === 'All Posts') {
-      await fetch(`http://localhost:3000/posts_page=${currentPage}&_limit=5`)
-        .then(re => re.json())
+  async function getPosts() {
+    if (postsKind === 'All Posts') {
+      await fetch(`http://localhost:3000/posts?_page=${currentPage}&_limit=5`)
+        .then(re => {if(re.status==404)throw "not found"; return re.json();})
         .then(data => setPosts(data))
         .catch(e => console.log(e));
-      e.target.classList.add('kindOfPosts');
-      e.target.nextElementSibling.classList.remove('kindOfPosts');
-    } else if (e.target.innerText === 'My Posts') {
+      document.querySelector('.postsKind').firstElementChild.classList.add('kindOfPosts');
+      document.querySelector('.postsKind').lastElementChild.classList.remove('kindOfPosts');
+    } else if (postsKind === 'My Posts') {
       await fetch(`http://localhost:3000/posts?_page=${currentPage}&_limit=8&userId=${id}`)
         .then(re => re.json())
         .then(data => setPosts(data))
         .catch(e => console.log(e));
-      e.target.classList.add('kindOfPosts');
-      e.target.previousElementSibling.classList.remove('kindOfPosts');
+        document.querySelector('.postsKind').firstElementChild.classList.remove('kindOfPosts');
+        document.querySelector('.postsKind').lastElementChild.classList.add('kindOfPosts');
     }
   }
+
+  useEffect(() => { getPosts() }, [postsKind, currentPage]);
 
   return (
     <>
       <div className='postsKind'>
-        <h2 onClick={handleKindChoice}>All Posts🤨</h2>
-        <h2 onClick={handleKindChoice} className='kindOfPosts'>My Posts🤗</h2>
+        <h2 onClick={() => setPostsKind("All Posts")}>All Posts🤨</h2>
+        <h2 onClick={() => setPostsKind("My Posts")} className='kindOfPosts'>My Posts🤗</h2>
       </div>
       <button className='addPostButton' onClick={() => setShowAdd(true)}>+</button>
       {showAdd && <AddPost setShowAdd={setShowAdd} setPosts={setPosts} />}
